@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		7176B5131C71C7EA00301AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7176B5111C71C7EA00301AB5 /* Main.storyboard */; };
 		7176B5151C71C7EA00301AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7176B5141C71C7EA00301AB5 /* Assets.xcassets */; };
 		7176B5181C71C7EA00301AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7176B5161C71C7EA00301AB5 /* LaunchScreen.storyboard */; };
+		7176B5211C71CBF400301AB5 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B5201C71CBF400301AB5 /* NavViewController.m */; };
+		7176B5241C71D04200301AB5 /* NavViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B5231C71D04200301AB5 /* NavViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		7176B5141C71C7EA00301AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7176B5171C71C7EA00301AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7176B5191C71C7EA00301AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7176B51F1C71CBF400301AB5 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
+		7176B5201C71CBF400301AB5 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
+		7176B5221C71D04200301AB5 /* NavViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewCell.h; sourceTree = "<group>"; };
+		7176B5231C71D04200301AB5 /* NavViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,10 @@
 			children = (
 				7176B50B1C71C7EA00301AB5 /* AppDelegate.h */,
 				7176B50C1C71C7EA00301AB5 /* AppDelegate.m */,
+				7176B51F1C71CBF400301AB5 /* NavViewController.h */,
+				7176B5201C71CBF400301AB5 /* NavViewController.m */,
+				7176B5221C71D04200301AB5 /* NavViewCell.h */,
+				7176B5231C71D04200301AB5 /* NavViewCell.m */,
 				7176B50E1C71C7EA00301AB5 /* ViewController.h */,
 				7176B50F1C71C7EA00301AB5 /* ViewController.m */,
 				7176B5111C71C7EA00301AB5 /* Main.storyboard */,
@@ -106,7 +116,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = ole;
+				ORGANIZATIONNAME = rexfun;
 				TargetAttributes = {
 					7176B5041C71C7EA00301AB5 = {
 						CreatedOnToolsVersion = 7.2;
@@ -114,7 +124,7 @@
 				};
 			};
 			buildConfigurationList = 7176B5001C71C7EA00301AB5 /* Build configuration list for PBXProject "paperdiy_oc" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -150,7 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7176B5101C71C7EA00301AB5 /* ViewController.m in Sources */,
+				7176B5241C71D04200301AB5 /* NavViewCell.m in Sources */,
 				7176B50D1C71C7EA00301AB5 /* AppDelegate.m in Sources */,
+				7176B5211C71CBF400301AB5 /* NavViewController.m in Sources */,
 				7176B50A1C71C7EA00301AB5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
