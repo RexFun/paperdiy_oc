@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "NavViewCell.h"
+#import "NavPresenter.h"
 
 @interface NavViewController : UITableViewController
-
+@property NavPresenter *navPresenter;
 @end

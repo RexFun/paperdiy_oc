@@ -13,14 +13,12 @@
 @end
 
 @implementation NavViewController
-NSArray *datas;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //    datas = [NSArray arrayWithObjects:@"a",@"b",@"c",@"d",@"e", nil];
     //初始化数据
-    [self getData];
+    self.navPresenter = [[NavPresenter alloc] initWithTableView:self.tableView];
+    [self.navPresenter reloadTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,13 +29,11 @@ NSArray *datas;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return [datas count];
+    return [self.navPresenter.models count];
 }
 
 
@@ -49,11 +45,7 @@ NSArray *datas;
         cell = [[NavViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-    [cell setWithId:[NSString stringWithFormat:@"%@",[[datas objectAtIndex:indexPath.row] objectForKey:@"ID"]]
-            andName:[[datas objectAtIndex:indexPath.row] objectForKey:@"NAME"]
-             andQty:[NSString stringWithFormat:@"%@",[[datas objectAtIndex:indexPath.row] objectForKey:@"QTY"]]
-     ];
+    [cell setWithId:[self.navPresenter.models objectAtIndex:indexPath.row].sectionId andName:[self.navPresenter.models objectAtIndex:indexPath.row].sectionName andQty:[self.navPresenter.models objectAtIndex:indexPath.row].sectionQty];
     return cell;
 }
 
@@ -102,28 +94,4 @@ NSArray *datas;
 }
 */
 
-- (void) getData {
-    NSString *sUrl = @"http://192.168.19.123:8181/paper/client/nav/getNavDataJson.action";
-    sUrl=[sUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL * url=[NSURL URLWithString:sUrl];
-    
-    NSURLRequest *request=[[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
-    
-    //发送异步请求
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        if (connectionError) {
-            NSLog(@"%@",connectionError.localizedDescription);
-        } else {
-            NSArray *aJson = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: nil];
-            datas = aJson;
-            //            for(NSDictionary *item in aJson) {
-            //                NSLog(@"Id: %@", [item objectForKey:@"ID"]);
-            //                NSLog(@"Name: %@", [item objectForKey:@"NAME"]);
-            //                NSLog(@"Qty: %@", [item objectForKey:@"QTY"]);
-            //            }
-            [self.tableView reloadData];
-        }
-        //[self.refreshControl endRefreshing];
-    }];
-}
 @end
