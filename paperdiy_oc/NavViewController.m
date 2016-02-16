@@ -18,7 +18,9 @@ NSArray *datas;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    datas = [NSArray arrayWithObjects:@"a",@"b",@"c",@"d",@"e", nil];
+    //    datas = [NSArray arrayWithObjects:@"a",@"b",@"c",@"d",@"e", nil];
+    //初始化数据
+    [self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,13 +42,18 @@ NSArray *datas;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DataCell" forIndexPath:indexPath];
+    static NSString *cellId = @"DataCell";
+    NavViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DataCell"];
+        cell = [[NavViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.textLabel.text = [datas objectAtIndex:indexPath.row];
     
+    [cell setWithId:[NSString stringWithFormat:@"%@",[[datas objectAtIndex:indexPath.row] objectForKey:@"ID"]]
+            andName:[[datas objectAtIndex:indexPath.row] objectForKey:@"NAME"]
+             andQty:[NSString stringWithFormat:@"%@",[[datas objectAtIndex:indexPath.row] objectForKey:@"QTY"]]
+     ];
     return cell;
 }
 
@@ -95,4 +102,28 @@ NSArray *datas;
 }
 */
 
+- (void) getData {
+    NSString *sUrl = @"http://192.168.19.123:8181/paper/client/nav/getNavDataJson.action";
+    sUrl=[sUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL * url=[NSURL URLWithString:sUrl];
+    
+    NSURLRequest *request=[[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
+    
+    //发送异步请求
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        if (connectionError) {
+            NSLog(@"%@",connectionError.localizedDescription);
+        } else {
+            NSArray *aJson = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: nil];
+            datas = aJson;
+            //            for(NSDictionary *item in aJson) {
+            //                NSLog(@"Id: %@", [item objectForKey:@"ID"]);
+            //                NSLog(@"Name: %@", [item objectForKey:@"NAME"]);
+            //                NSLog(@"Qty: %@", [item objectForKey:@"QTY"]);
+            //            }
+            [self.tableView reloadData];
+        }
+        //[self.refreshControl endRefreshing];
+    }];
+}
 @end

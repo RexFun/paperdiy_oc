@@ -10,6 +10,9 @@
 
 @interface NavViewCell : UITableViewCell
 
-@property (nonatomic, strong) UILabel *sectionName;
+@property (weak, nonatomic) IBOutlet UILabel *sectionId;
+@property (weak, nonatomic) IBOutlet UILabel *sectionName;
+@property (weak, nonatomic) IBOutlet UILabel *sectionQty;
 
+- (void)setWithId:(NSString *)_id andName:(NSString *)_name andQty:(NSString *)_qty;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavViewCell.h"
 
 @interface NavViewController : UITableViewController
 
