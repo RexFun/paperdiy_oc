@@ -16,14 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //初始化数据
-    self.navPresenter = [[NavPresenter alloc] initWithTableView:self.tableView];
-    [self.navPresenter reloadTableView];
+    [self initView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initView {
+    //初始化并显示进度圈
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl beginRefreshing];
+    //初始化数据
+    self.navPresenter = [[NavPresenter alloc] initWithTableView:self.tableView andRefreshControl:self.refreshControl];
+    [self reloadTableViewAction];
 }
 
 #pragma mark - Table view data source
@@ -36,16 +44,14 @@
     return [self.navPresenter.models count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"DataCell";
     NavViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    
     if (cell == nil) {
         cell = [[NavViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    [cell setWithId:[self.navPresenter.models objectAtIndex:indexPath.row].sectionId andName:[self.navPresenter.models objectAtIndex:indexPath.row].sectionName andQty:[self.navPresenter.models objectAtIndex:indexPath.row].sectionQty];
+    [cell setWithModel:[self.navPresenter.models objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -94,4 +100,8 @@
 }
 */
 
+#pragma mark - action
+- (void)reloadTableViewAction {
+    [self.navPresenter reloadTableView];
+}
 @end

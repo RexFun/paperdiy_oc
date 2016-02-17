@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavModel.h"
 
 @interface NavViewCell : UITableViewCell
 
@@ -14,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *sectionName;
 @property (weak, nonatomic) IBOutlet UILabel *sectionQty;
 
-- (void)setWithId:(NSString *)_id andName:(NSString *)_name andQty:(NSString *)_qty;
+- (void)setWithModel:(NavModel *)model ;
+
 @end

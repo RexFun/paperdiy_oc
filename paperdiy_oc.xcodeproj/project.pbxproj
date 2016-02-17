@@ -17,6 +17,8 @@
 		7176B5241C71D04200301AB5 /* NavViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B5231C71D04200301AB5 /* NavViewCell.m */; };
 		7176B52E1C72C30800301AB5 /* NavModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B52D1C72C30800301AB5 /* NavModel.m */; };
 		7176B53C1C730D6E00301AB5 /* NavPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B53B1C730D6E00301AB5 /* NavPresenter.m */; };
+		71B957301C7425830070A9DF /* actionUrlInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9572F1C7425830070A9DF /* actionUrlInfo.plist */; };
+		71B957331C743D2A0070A9DF /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B957321C743D2A0070A9DF /* AppUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		7176B52D1C72C30800301AB5 /* NavModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavModel.m; sourceTree = "<group>"; };
 		7176B53A1C730D6E00301AB5 /* NavPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavPresenter.h; sourceTree = "<group>"; };
 		7176B53B1C730D6E00301AB5 /* NavPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavPresenter.m; sourceTree = "<group>"; };
+		71B9572F1C7425830070A9DF /* actionUrlInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = actionUrlInfo.plist; sourceTree = "<group>"; };
+		71B957311C743D2A0070A9DF /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
+		71B957321C743D2A0070A9DF /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 		7176B5071C71C7EA00301AB5 /* paperdiy_oc */ = {
 			isa = PBXGroup;
 			children = (
+				71B957341C7441FB0070A9DF /* Util */,
 				7176B5261C72BDE400301AB5 /* NavView */,
 				7176B5271C72BDEE00301AB5 /* SubNavView */,
 				7176B5281C72BDFB00301AB5 /* DetailView */,
@@ -81,6 +87,7 @@
 				7176B5141C71C7EA00301AB5 /* Assets.xcassets */,
 				7176B5161C71C7EA00301AB5 /* LaunchScreen.storyboard */,
 				7176B5191C71C7EA00301AB5 /* Info.plist */,
+				71B9572F1C7425830070A9DF /* actionUrlInfo.plist */,
 				7176B5081C71C7EA00301AB5 /* Supporting Files */,
 			);
 			path = paperdiy_oc;
@@ -97,9 +104,9 @@
 		7176B5261C72BDE400301AB5 /* NavView */ = {
 			isa = PBXGroup;
 			children = (
-				7176B5361C73029B00301AB5 /* P */,
 				7176B5291C72C27700301AB5 /* M */,
 				7176B52A1C72C28100301AB5 /* V */,
+				7176B5361C73029B00301AB5 /* P */,
 			);
 			name = NavView;
 			sourceTree = "<group>";
@@ -145,6 +152,15 @@
 				7176B53B1C730D6E00301AB5 /* NavPresenter.m */,
 			);
 			name = P;
+			sourceTree = "<group>";
+		};
+		71B957341C7441FB0070A9DF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				71B957311C743D2A0070A9DF /* AppUtil.h */,
+				71B957321C743D2A0070A9DF /* AppUtil.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +222,7 @@
 			files = (
 				7176B5181C71C7EA00301AB5 /* LaunchScreen.storyboard in Resources */,
 				7176B5151C71C7EA00301AB5 /* Assets.xcassets in Resources */,
+				71B957301C7425830070A9DF /* actionUrlInfo.plist in Resources */,
 				7176B5131C71C7EA00301AB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +237,7 @@
 				7176B5101C71C7EA00301AB5 /* ViewController.m in Sources */,
 				7176B52E1C72C30800301AB5 /* NavModel.m in Sources */,
 				7176B5241C71D04200301AB5 /* NavViewCell.m in Sources */,
+				71B957331C743D2A0070A9DF /* AppUtil.m in Sources */,
 				7176B50D1C71C7EA00301AB5 /* AppDelegate.m in Sources */,
 				7176B5211C71CBF400301AB5 /* NavViewController.m in Sources */,
 				7176B50A1C71C7EA00301AB5 /* main.m in Sources */,
@@ -372,6 +390,7 @@
 				7176B51E1C71C7EA00301AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

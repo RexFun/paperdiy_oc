@@ -10,7 +10,7 @@
 
 @implementation NavModel
 
-- (void) initWithData: (NSDictionary *) data {
+- (void)initWithData: (NSDictionary *) data {
     self.sectionId = [NSString stringWithFormat:@"%@",[data objectForKey:@"ID"]];
     self.sectionName = [data objectForKey:@"NAME"];
     self.sectionQty = [NSString stringWithFormat:@"%@",[data objectForKey:@"QTY"]];

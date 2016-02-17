@@ -8,14 +8,27 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "AppUtil.h"
 #import "NavModel.h"
 
-@protocol ReloadTableViewByModelsDelegate
-- (id) initWithTableView:(UITableView *)tableView;
-- (void) reloadTableView;
-@end
+//接口写法
+//@protocol ReloadTableViewByModelsDelegate
+//- (id) initWithTableView:(UITableView *)tableView;
+//- (void) reloadTableView;
+//@end
+//
+//@interface NavPresenter : NSObject <ReloadTableViewByModelsDelegate>
+//@property NSMutableArray<NavModel *> *models;
+//@property UITableView *tableView;
+//@end
 
-@interface NavPresenter : NSObject <ReloadTableViewByModelsDelegate>
+@interface NavPresenter : NSObject
+
 @property NSMutableArray<NavModel *> *models;
 @property UITableView *tableView;
+@property UIRefreshControl *refreshControl;
+
+- (id)initWithTableView:(UITableView *)tableView andRefreshControl:(UIRefreshControl *)refreshControl;
+- (void)reloadTableView;
+
 @end

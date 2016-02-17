@@ -15,6 +15,6 @@
 @property NSString *sectionQty;
 @property NSArray *datas;
 
-- (void) initWithData: (NSDictionary *) data;
+- (void)initWithData: (NSDictionary *) data;
 
 @end

@@ -20,9 +20,9 @@
     // Configure the view for the selected state
 }
 
-- (void)setWithId:(NSString *)_id andName:(NSString *)_name andQty:(NSString *)_qty {
-    self.sectionId.text = _id;
-    self.sectionName.text = _name;
-    self.sectionQty.text = _qty;
+- (void)setWithModel:(NavModel *)model {
+    self.sectionId.text = model.sectionId;
+    self.sectionName.text = model.sectionName;
+    self.sectionQty.text = model.sectionQty;
 }
 @end
