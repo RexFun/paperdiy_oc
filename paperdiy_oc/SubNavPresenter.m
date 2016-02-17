@@ -1,31 +1,37 @@
 //
-//  NavPresenter.m
+//  SubNavPresenter.m
 //  paperdiy_oc
 //
-//  Created by mac373 on 16/2/16.
+//  Created by mac373 on 16/2/17.
 //  Copyright © 2016年 rexfun. All rights reserved.
 //
 
-#import "NavPresenter.h"
+#import "SubNavPresenter.h"
 
-@implementation NavPresenter
+@implementation SubNavPresenter
 
-# pragma mark - 初始化tableView
-- (id)initWithTableView:(UITableView *)tableView andRefreshControl:(UIRefreshControl *)refreshControl {
+- (id)initWithCollectionView:(UICollectionView *)collectionView andNavId:(NSString *)navId {
     self.models = [[NSMutableArray alloc] init];
-    self.tableView = tableView;
-    self.refreshControl = refreshControl;
+    self.collectionView = collectionView;
+    self.navId = navId;
     return self;
 }
 
-# pragma mark - 重刷tableView
-- (void)reloadTableView {
+- (void)reloadCollectionView {
     //初始化请求路径url
-    NSString *sUrl = [AppUtil getActionUrlInPlistWithKey:@"NavAction"];
+    NSString *sUrl = [AppUtil getActionUrlInPlistWithKey:@"SubNavAction"];
     sUrl=[sUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url=[NSURL URLWithString:sUrl];
     //初始化request
-    NSURLRequest *request=[[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
+    // 1.
+    NSMutableURLRequest *request=[[NSMutableURLRequest alloc] initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
+    // 2.
+    [request setHTTPMethod:@"POST"];
+    // 3. 数据体
+    NSString *params = [[NSString alloc] initWithFormat:@"pid=%@&rownum=%@&pagesize=%@", self.navId, @"0" ,@"5"];
+    // 4. 将字符串转换成数据
+    NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    [request setHTTPBody:postData];
     //发送异步请求
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         if (connectionError) {
@@ -37,15 +43,17 @@
             [self.models removeAllObjects];
             //加载新记录
             for(NSDictionary *data in datas) {
-                NavModel *o = [[NavModel alloc] init];
+                SubNavModel *o = [[SubNavModel alloc] init];
                 [o initWithData:data];
                 [self.models addObject:o];
             }
+            NSLog(@"subnav data's len : %i", self.models.count);
             //刷新tableView
-            [self.tableView reloadData];
+            [self.collectionView reloadData];
         }
-        [self.refreshControl endRefreshing];
+//        [self.refreshControl endRefreshing];
     }];
+    
 }
 
 @end

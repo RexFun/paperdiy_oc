@@ -90,15 +90,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSLog(@"%i", indexPath.row);
+    
+    //往SubNavViewController传值
+    UICollectionViewController *subNavViewController=[segue destinationViewController];
+    [subNavViewController setValue:[self.navPresenter.models objectAtIndex:indexPath.row].navId forKey:@"navId"];
+    [subNavViewController setValue:[self.navPresenter.models objectAtIndex:indexPath.row].navName forKey:@"navName"];
+    [subNavViewController setValue:[self.navPresenter.models objectAtIndex:indexPath.row].navQty forKey:@"navQty"];
 }
-*/
 
 #pragma mark - action
 - (void)reloadTableViewAction {

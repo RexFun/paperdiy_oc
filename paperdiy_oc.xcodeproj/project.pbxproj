@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7104D42A1C7469DE0060E87D /* SubNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7104D4291C7469DE0060E87D /* SubNavViewController.m */; };
+		7104D42D1C746EEF0060E87D /* SubNavViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7104D42C1C746EEF0060E87D /* SubNavViewCell.m */; };
+		7104D4301C746F350060E87D /* SubNavModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7104D42F1C746F350060E87D /* SubNavModel.m */; };
+		7104D4331C7473930060E87D /* SubNavPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7104D4321C7473930060E87D /* SubNavPresenter.m */; };
 		7176B50A1C71C7EA00301AB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B5091C71C7EA00301AB5 /* main.m */; };
 		7176B50D1C71C7EA00301AB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B50C1C71C7EA00301AB5 /* AppDelegate.m */; };
-		7176B5101C71C7EA00301AB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B50F1C71C7EA00301AB5 /* ViewController.m */; };
 		7176B5131C71C7EA00301AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7176B5111C71C7EA00301AB5 /* Main.storyboard */; };
 		7176B5151C71C7EA00301AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7176B5141C71C7EA00301AB5 /* Assets.xcassets */; };
 		7176B5181C71C7EA00301AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7176B5161C71C7EA00301AB5 /* LaunchScreen.storyboard */; };
@@ -22,12 +25,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7104D4281C7469DE0060E87D /* SubNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubNavViewController.h; sourceTree = "<group>"; };
+		7104D4291C7469DE0060E87D /* SubNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavViewController.m; sourceTree = "<group>"; };
+		7104D42B1C746EEF0060E87D /* SubNavViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubNavViewCell.h; sourceTree = "<group>"; };
+		7104D42C1C746EEF0060E87D /* SubNavViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavViewCell.m; sourceTree = "<group>"; };
+		7104D42E1C746F350060E87D /* SubNavModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubNavModel.h; sourceTree = "<group>"; };
+		7104D42F1C746F350060E87D /* SubNavModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavModel.m; sourceTree = "<group>"; };
+		7104D4311C7473930060E87D /* SubNavPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubNavPresenter.h; sourceTree = "<group>"; };
+		7104D4321C7473930060E87D /* SubNavPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavPresenter.m; sourceTree = "<group>"; };
 		7176B5051C71C7EA00301AB5 /* paperdiy_oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paperdiy_oc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7176B5091C71C7EA00301AB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7176B50B1C71C7EA00301AB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7176B50C1C71C7EA00301AB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7176B50E1C71C7EA00301AB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7176B50F1C71C7EA00301AB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7176B5121C71C7EA00301AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7176B5141C71C7EA00301AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7176B5171C71C7EA00301AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,8 +90,6 @@
 				7176B5281C72BDFB00301AB5 /* DetailView */,
 				7176B50B1C71C7EA00301AB5 /* AppDelegate.h */,
 				7176B50C1C71C7EA00301AB5 /* AppDelegate.m */,
-				7176B50E1C71C7EA00301AB5 /* ViewController.h */,
-				7176B50F1C71C7EA00301AB5 /* ViewController.m */,
 				7176B5111C71C7EA00301AB5 /* Main.storyboard */,
 				7176B5141C71C7EA00301AB5 /* Assets.xcassets */,
 				7176B5161C71C7EA00301AB5 /* LaunchScreen.storyboard */,
@@ -114,6 +121,9 @@
 		7176B5271C72BDEE00301AB5 /* SubNavView */ = {
 			isa = PBXGroup;
 			children = (
+				71B957371C7445530070A9DF /* M */,
+				71B957361C74454F0070A9DF /* V */,
+				71B957351C7445460070A9DF /* P */,
 			);
 			name = SubNavView;
 			sourceTree = "<group>";
@@ -161,6 +171,35 @@
 				71B957321C743D2A0070A9DF /* AppUtil.m */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		71B957351C7445460070A9DF /* P */ = {
+			isa = PBXGroup;
+			children = (
+				7104D4311C7473930060E87D /* SubNavPresenter.h */,
+				7104D4321C7473930060E87D /* SubNavPresenter.m */,
+			);
+			name = P;
+			sourceTree = "<group>";
+		};
+		71B957361C74454F0070A9DF /* V */ = {
+			isa = PBXGroup;
+			children = (
+				7104D4281C7469DE0060E87D /* SubNavViewController.h */,
+				7104D4291C7469DE0060E87D /* SubNavViewController.m */,
+				7104D42B1C746EEF0060E87D /* SubNavViewCell.h */,
+				7104D42C1C746EEF0060E87D /* SubNavViewCell.m */,
+			);
+			name = V;
+			sourceTree = "<group>";
+		};
+		71B957371C7445530070A9DF /* M */ = {
+			isa = PBXGroup;
+			children = (
+				7104D42E1C746F350060E87D /* SubNavModel.h */,
+				7104D42F1C746F350060E87D /* SubNavModel.m */,
+			);
+			name = M;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,14 +273,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7176B5101C71C7EA00301AB5 /* ViewController.m in Sources */,
+				7104D4301C746F350060E87D /* SubNavModel.m in Sources */,
 				7176B52E1C72C30800301AB5 /* NavModel.m in Sources */,
 				7176B5241C71D04200301AB5 /* NavViewCell.m in Sources */,
 				71B957331C743D2A0070A9DF /* AppUtil.m in Sources */,
 				7176B50D1C71C7EA00301AB5 /* AppDelegate.m in Sources */,
 				7176B5211C71CBF400301AB5 /* NavViewController.m in Sources */,
+				7104D4331C7473930060E87D /* SubNavPresenter.m in Sources */,
+				7104D42D1C746EEF0060E87D /* SubNavViewCell.m in Sources */,
 				7176B50A1C71C7EA00301AB5 /* main.m in Sources */,
 				7176B53C1C730D6E00301AB5 /* NavPresenter.m in Sources */,
+				7104D42A1C7469DE0060E87D /* SubNavViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

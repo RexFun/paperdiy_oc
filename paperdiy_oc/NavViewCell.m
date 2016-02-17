@@ -21,8 +21,8 @@
 }
 
 - (void)setWithModel:(NavModel *)model {
-    self.sectionId.text = model.sectionId;
-    self.sectionName.text = model.sectionName;
-    self.sectionQty.text = model.sectionQty;
+    self.navId.text = model.navId;
+    self.navName.text = model.navName;
+    self.navQty.text = model.navQty;
 }
 @end

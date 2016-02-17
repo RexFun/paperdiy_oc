@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>NavAction</key>
-    <string>http://192.168.19.123:8181/paper/client/nav/getNavDataJson.action</string>
-    <key>SubNavAction</key>
-    <string>http://192.168.19.123:8181/paper/client/nav/getNavDataJson.action</string>
+	<string>http://192.168.19.123:8181/paper/client/nav/getNavDataJson.action</string>
+	<key>SubNavAction</key>
+	<string>http://192.168.19.123:8181/paper/client/papermodel/getPageByPid.action</string>
 </dict>
 </plist>

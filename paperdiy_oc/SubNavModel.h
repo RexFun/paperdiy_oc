@@ -1,18 +1,17 @@
 //
-//  NavModel.h
+//  SubNavModel.h
 //  paperdiy_oc
 //
-//  Created by mac373 on 16/2/16.
+//  Created by mac373 on 16/2/17.
 //  Copyright © 2016年 rexfun. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface NavModel : NSObject
+@interface SubNavModel : NSObject
 
-@property NSString *navId;
-@property NSString *navName;
-@property NSString *navQty;
+@property NSString *subNavId;
+@property NSString *subNavName;
 
 - (void)initWithData: (NSDictionary *) data;
 

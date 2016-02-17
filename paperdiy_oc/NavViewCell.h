@@ -11,9 +11,9 @@
 
 @interface NavViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *sectionId;
-@property (weak, nonatomic) IBOutlet UILabel *sectionName;
-@property (weak, nonatomic) IBOutlet UILabel *sectionQty;
+@property (weak, nonatomic) IBOutlet UILabel *navId;
+@property (weak, nonatomic) IBOutlet UILabel *navName;
+@property (weak, nonatomic) IBOutlet UILabel *navQty;
 
 - (void)setWithModel:(NavModel *)model ;
 
