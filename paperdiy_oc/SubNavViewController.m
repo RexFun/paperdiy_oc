@@ -68,10 +68,13 @@ static NSString * const reuseIdentifier = @"DataCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    //获取Cell对象
     SubNavViewCell *cell = (SubNavViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
+    //加边框颜色
+    cell.layer.borderWidth=1.0f;
+    cell.layer.borderColor=[UIColor lightGrayColor].CGColor;
+    //从model装载数据
     [cell setWithModel:[self.subNavPresenter.models objectAtIndex:indexPath.row]];
-    
     return cell;
 }
 

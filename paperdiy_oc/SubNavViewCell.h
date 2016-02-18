@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppUtil.h"
 #import "SubNavModel.h"
 
 @interface SubNavViewCell : UICollectionViewCell

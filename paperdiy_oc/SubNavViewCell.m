@@ -15,6 +15,11 @@
     NSLog(@"subNavName : %@", model.subNavName);
     self.subNavId.text = model.subNavId;
     self.subNavName.text = model.subNavName;
+    
+    NSString *imgUrlStr = [NSString stringWithFormat:[AppUtil getActionUrlInPlistWithKey:@"SubNavImgAction"], model.subNavId];
+    NSURL *imgUrl = [NSURL URLWithString:imgUrlStr];
+    NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
+    self.subNavImg.image = [UIImage imageWithData:imgData];
 }
 
 @end
