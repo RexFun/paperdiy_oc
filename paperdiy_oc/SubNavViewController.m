@@ -18,16 +18,6 @@ static NSString * const reuseIdentifier = @"DataCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    NSLog(@"_navId -> %@",_navId);
-//    NSLog(@"_navName -> %@",_navName);
-//    NSLog(@"_navQty -> %@",_navQty);
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-//    [self.collectionView registerClass:[SubNavViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-//    self.parentViewController.title = _navName;
     [self initView];
 }
 
@@ -37,6 +27,8 @@ static NSString * const reuseIdentifier = @"DataCell";
 }
 
 - (void)initView {
+    //设置Title
+    self.title = _navName;
 //    //初始化并显示进度圈
 //    self.refreshControl = [[UIRefreshControl alloc] init];
 //    [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
