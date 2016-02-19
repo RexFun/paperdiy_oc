@@ -25,8 +25,8 @@
 @interface NavPresenter : NSObject
 
 @property NSMutableArray<NavModel *> *models;
-@property UITableView *tableView;
-@property UIRefreshControl *refreshControl;
+@property UITableView                *tableView;
+@property UIRefreshControl           *refreshControl;
 
 - (id)initWithTableView:(UITableView *)tableView andRefreshControl:(UIRefreshControl *)refreshControl;
 - (void)reloadTableView;

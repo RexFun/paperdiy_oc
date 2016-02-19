@@ -2,11 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SubNavImgAction</key>
-	<string>http://192.168.19.123:8181/paper/client/paperimage/getPaperImageByPidAndMaxSort.action?pid=%@</string>
 	<key>NavAction</key>
 	<string>http://192.168.19.123:8181/paper/client/nav/getNavDataJson.action</string>
 	<key>SubNavAction</key>
-	<string>http://192.168.19.123:8181/paper/client/papermodel/getPageByPid.action</string>
+    <string>http://192.168.19.123:8181/paper/client/papermodel/getPageByPid.action</string>
+    <key>SubNavImgAction</key>
+    <string>http://192.168.19.123:8181/paper/client/paperimage/getPaperImageByPidAndMaxSort.action?pid=%@</string>
+    <key>DetailCollectionAction</key>
+    <string>http://192.168.19.123:8181/paper/client/paperimage/getPageByPid.action</string>
+    <key>DetailPageAction</key>
+    <string>http://192.168.19.123:8181/paper/client/paperimage/getListByPid.action</string>
+    <key>DetailImgAction</key>
+    <string>http://192.168.19.123:8181/paper//client/paperimage/getPaperImageById.action?id=%@</string>
 </dict>
 </plist>

@@ -21,8 +21,8 @@
 }
 
 - (void)setWithModel:(NavModel *)model {
-    self.navId.text = model.navId;
+    self.navId.text   = model.navId;
     self.navName.text = model.navName;
-    self.navQty.text = model.navQty;
+    self.navQty.text  = [NSString stringWithFormat:@"(%@)", model.navQty];
 }
 @end

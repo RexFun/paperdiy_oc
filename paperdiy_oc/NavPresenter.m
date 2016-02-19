@@ -12,8 +12,8 @@
 
 # pragma mark - 初始化tableView
 - (id)initWithTableView:(UITableView *)tableView andRefreshControl:(UIRefreshControl *)refreshControl {
-    self.models = [[NSMutableArray alloc] init];
-    self.tableView = tableView;
+    self.models         = [[NSMutableArray alloc] init];
+    self.tableView      = tableView;
     self.refreshControl = refreshControl;
     return self;
 }
@@ -21,11 +21,10 @@
 # pragma mark - 重刷tableView
 - (void)reloadTableView {
     //初始化请求路径url
-    NSString *sUrl = [AppUtil getActionUrlInPlistWithKey:@"NavAction"];
-    sUrl=[sUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url=[NSURL URLWithString:sUrl];
+    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"NavAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL    *url    = [NSURL URLWithString:urlStr];
     //初始化request
-    NSURLRequest *request=[[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
     //发送异步请求
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         if (connectionError) {

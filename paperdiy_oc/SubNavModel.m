@@ -11,7 +11,7 @@
 @implementation SubNavModel
 
 - (void)initWithData: (NSDictionary *) data {
-    self.subNavId = [NSString stringWithFormat:@"%@",[data objectForKey:@"ID"]];
+    self.subNavId   = [NSString stringWithFormat:@"%@",[data objectForKey:@"ID"]];
     self.subNavName = [data objectForKey:@"NAME"];
 }
 

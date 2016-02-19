@@ -14,9 +14,9 @@
 @interface SubNavPresenter : NSObject
 
 @property NSMutableArray<SubNavModel *> *models;
-@property UICollectionView *collectionView;
-@property UIRefreshControl *refreshControl;
-@property NSString *navId;
+@property UICollectionView              *collectionView;
+@property UIRefreshControl              *refreshControl;
+@property NSString                      *navId;
 
 - (id)initWithCollectionView:(UICollectionView *)collectionView andNavId:(NSString *)navId;
 - (void)reloadCollectionView;

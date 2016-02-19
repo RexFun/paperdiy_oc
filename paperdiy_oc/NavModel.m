@@ -11,9 +11,9 @@
 @implementation NavModel
 
 - (void)initWithData: (NSDictionary *) data {
-    self.navId = [NSString stringWithFormat:@"%@",[data objectForKey:@"ID"]];
+    self.navId   = [NSString stringWithFormat:@"%@",[data objectForKey:@"ID"]];
     self.navName = [data objectForKey:@"NAME"];
-    self.navQty = [NSString stringWithFormat:@"%@",[data objectForKey:@"QTY"]];
+    self.navQty  = [NSString stringWithFormat:@"%@",[data objectForKey:@"QTY"]];
 }
 
 @end

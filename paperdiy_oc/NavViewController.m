@@ -98,8 +98,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    NSLog(@"%i", indexPath.row);
-    
     //往SubNavViewController传值
     UICollectionViewController *subNavViewController=[segue destinationViewController];
     [subNavViewController setValue:[self.navPresenter.models objectAtIndex:indexPath.row].navId forKey:@"navId"];

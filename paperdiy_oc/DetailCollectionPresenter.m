@@ -1,25 +1,25 @@
 //
-//  SubNavPresenter.m
+//  DetailCollectionPresenter.m
 //  paperdiy_oc
 //
-//  Created by mac373 on 16/2/17.
+//  Created by mac373 on 16/2/19.
 //  Copyright © 2016年 rexfun. All rights reserved.
 //
 
-#import "SubNavPresenter.h"
+#import "DetailCollectionPresenter.h"
 
-@implementation SubNavPresenter
+@implementation DetailCollectionPresenter
 
-- (id)initWithCollectionView:(UICollectionView *)collectionView andNavId:(NSString *)navId {
+- (id)initWithCollectionView:(UICollectionView *)collectionView andSubNavId:(NSString *)subNavId {
     self.models         = [[NSMutableArray alloc] init];
     self.collectionView = collectionView;
-    self.navId          = navId;
+    self.subNavId       = subNavId;
     return self;
 }
 
 - (void)reloadCollectionView {
     //初始化请求路径url
-    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"SubNavAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url       = [NSURL URLWithString:urlStr];
     //初始化request
     // 1.
@@ -27,7 +27,7 @@
     // 2.
     [request setHTTPMethod:@"POST"];
     // 3. 数据体
-    NSString *params = [[NSString alloc] initWithFormat:@"pid=%@&rownum=%@&pagesize=%@", self.navId, @"0" ,@"5"];
+    NSString *params = [[NSString alloc] initWithFormat:@"pid=%@&rownum=%@&pagesize=%@", self.subNavId, @"0" ,@"100"];
     // 4. 将字符串转换成数据
     NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     [request setHTTPBody:postData];
@@ -42,16 +42,15 @@
             [self.models removeAllObjects];
             //加载新记录
             for(NSDictionary *data in datas) {
-                SubNavModel *o = [[SubNavModel alloc] init];
+                DetailModel *o = [[DetailModel alloc] init];
                 [o initWithData:data];
                 [self.models addObject:o];
             }
             //刷新tableView
             [self.collectionView reloadData];
         }
-//        [self.refreshControl endRefreshing];
+        //        [self.refreshControl endRefreshing];
     }];
-    
 }
 
 @end
