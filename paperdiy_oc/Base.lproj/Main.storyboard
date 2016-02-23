@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="OXj-rU-mro">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="OXj-rU-mro">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--首页-->
@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DataCell" id="TUP-v5-oZ8" customClass="NavViewCell">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TUP-v5-oZ8" id="a1H-Rb-73E">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -81,7 +81,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DataCell" id="pRg-EU-Y7t" customClass="SubNavViewCell">
-                                <rect key="frame" x="10" y="74" width="172" height="186"/>
+                                <rect key="frame" x="10" y="10" width="172" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="172" height="186"/>
@@ -177,6 +177,7 @@
                                     <outlet property="detailImgId" destination="16M-Dy-Tjd" id="PYp-CX-ViI"/>
                                     <outlet property="detailImgSort" destination="Jth-QU-D6d" id="qmI-kR-AUq"/>
                                     <outlet property="detailImgView" destination="WIO-ft-XIg" id="8de-gR-iMh"/>
+                                    <segue destination="ohj-bo-Wf0" kind="push" id="naO-Aq-lEw"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -191,6 +192,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hO2-RZ-pfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1449.5" y="22.5"/>
+        </scene>
+        <!--Detail Scroll Page View Controller-->
+        <scene sceneID="roQ-YD-Rup">
+            <objects>
+                <viewController id="ohj-bo-Wf0" customClass="DetailScrollPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K6k-i2-Pgz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="playback" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="JIZ-ti-Kdt">
+                                <rect key="frame" x="0.0" y="63" width="375" height="559"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="Ujk-x8-DCq">
+                                <rect key="frame" x="168" y="626" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.35294117647058826" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dAg-Io-fIG"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imgPageControl" destination="Ujk-x8-DCq" id="tB8-LB-IlN"/>
+                        <outlet property="imgScrollView" destination="JIZ-ti-Kdt" id="JTA-iQ-vFb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyW-2W-Q6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1945.5" y="22.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DeC-yf-Pqq">

@@ -26,6 +26,9 @@
 		71C3BEB11C76B29000A00C4D /* DetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEB01C76B29000A00C4D /* DetailCollectionViewCell.m */; };
 		71C3BEB41C76B2B300A00C4D /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEB31C76B2B300A00C4D /* DetailModel.m */; };
 		71C3BEB71C76B2C900A00C4D /* DetailCollectionPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEB61C76B2C900A00C4D /* DetailCollectionPresenter.m */; };
+		71C3BEBA1C76E84800A00C4D /* DetailScrollPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEB91C76E84800A00C4D /* DetailScrollPageViewController.m */; };
+		71C3BEBD1C770BF500A00C4D /* DetailScrollPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEBC1C770BF500A00C4D /* DetailScrollPageViewCell.m */; };
+		71C3BEC11C7719D200A00C4D /* DetailScrollPagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEC01C7719D200A00C4D /* DetailScrollPagePresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,12 @@
 		71C3BEB31C76B2B300A00C4D /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		71C3BEB51C76B2C900A00C4D /* DetailCollectionPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCollectionPresenter.h; sourceTree = "<group>"; };
 		71C3BEB61C76B2C900A00C4D /* DetailCollectionPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCollectionPresenter.m; sourceTree = "<group>"; };
+		71C3BEB81C76E84800A00C4D /* DetailScrollPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailScrollPageViewController.h; sourceTree = "<group>"; };
+		71C3BEB91C76E84800A00C4D /* DetailScrollPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailScrollPageViewController.m; sourceTree = "<group>"; };
+		71C3BEBB1C770BF500A00C4D /* DetailScrollPageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailScrollPageViewCell.h; sourceTree = "<group>"; };
+		71C3BEBC1C770BF500A00C4D /* DetailScrollPageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailScrollPageViewCell.m; sourceTree = "<group>"; };
+		71C3BEBF1C7719D200A00C4D /* DetailScrollPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailScrollPagePresenter.h; sourceTree = "<group>"; };
+		71C3BEC01C7719D200A00C4D /* DetailScrollPagePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailScrollPagePresenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +108,7 @@
 				71B957341C7441FB0070A9DF /* Util */,
 				7176B5261C72BDE400301AB5 /* NavView */,
 				7176B5271C72BDEE00301AB5 /* SubNavView */,
-				7176B5281C72BDFB00301AB5 /* DetailCollectionView */,
-				71C3BEA81C76B1DD00A00C4D /* DetailPageView */,
+				7176B5281C72BDFB00301AB5 /* DetailViews */,
 				7176B50B1C71C7EA00301AB5 /* AppDelegate.h */,
 				7176B50C1C71C7EA00301AB5 /* AppDelegate.m */,
 				7176B5111C71C7EA00301AB5 /* Main.storyboard */,
@@ -141,14 +149,14 @@
 			name = SubNavView;
 			sourceTree = "<group>";
 		};
-		7176B5281C72BDFB00301AB5 /* DetailCollectionView */ = {
+		7176B5281C72BDFB00301AB5 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
 				71C3BEA71C76B16900A00C4D /* M */,
 				71C3BEA61C76B16400A00C4D /* V */,
 				71C3BEA51C76B15C00A00C4D /* P */,
 			);
-			name = DetailCollectionView;
+			name = DetailViews;
 			sourceTree = "<group>";
 		};
 		7176B5291C72C27700301AB5 /* M */ = {
@@ -223,6 +231,8 @@
 			children = (
 				71C3BEB51C76B2C900A00C4D /* DetailCollectionPresenter.h */,
 				71C3BEB61C76B2C900A00C4D /* DetailCollectionPresenter.m */,
+				71C3BEBF1C7719D200A00C4D /* DetailScrollPagePresenter.h */,
+				71C3BEC01C7719D200A00C4D /* DetailScrollPagePresenter.m */,
 			);
 			name = P;
 			sourceTree = "<group>";
@@ -230,10 +240,8 @@
 		71C3BEA61C76B16400A00C4D /* V */ = {
 			isa = PBXGroup;
 			children = (
-				71C3BEAC1C76B26200A00C4D /* DetailCollectionViewController.h */,
-				71C3BEAD1C76B26300A00C4D /* DetailCollectionViewController.m */,
-				71C3BEAF1C76B29000A00C4D /* DetailCollectionViewCell.h */,
-				71C3BEB01C76B29000A00C4D /* DetailCollectionViewCell.m */,
+				71C3BEBE1C770DB400A00C4D /* DetailCollectionView */,
+				71C3BEA81C76B1DD00A00C4D /* DetailScrollPageView */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -247,35 +255,26 @@
 			name = M;
 			sourceTree = "<group>";
 		};
-		71C3BEA81C76B1DD00A00C4D /* DetailPageView */ = {
+		71C3BEA81C76B1DD00A00C4D /* DetailScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
-				71C3BEAB1C76B22500A00C4D /* M */,
-				71C3BEAA1C76B22000A00C4D /* V */,
-				71C3BEA91C76B21B00A00C4D /* P */,
+				71C3BEB81C76E84800A00C4D /* DetailScrollPageViewController.h */,
+				71C3BEB91C76E84800A00C4D /* DetailScrollPageViewController.m */,
+				71C3BEBB1C770BF500A00C4D /* DetailScrollPageViewCell.h */,
+				71C3BEBC1C770BF500A00C4D /* DetailScrollPageViewCell.m */,
 			);
-			name = DetailPageView;
+			name = DetailScrollPageView;
 			sourceTree = "<group>";
 		};
-		71C3BEA91C76B21B00A00C4D /* P */ = {
+		71C3BEBE1C770DB400A00C4D /* DetailCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				71C3BEAC1C76B26200A00C4D /* DetailCollectionViewController.h */,
+				71C3BEAD1C76B26300A00C4D /* DetailCollectionViewController.m */,
+				71C3BEAF1C76B29000A00C4D /* DetailCollectionViewCell.h */,
+				71C3BEB01C76B29000A00C4D /* DetailCollectionViewCell.m */,
 			);
-			name = P;
-			sourceTree = "<group>";
-		};
-		71C3BEAA1C76B22000A00C4D /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = V;
-			sourceTree = "<group>";
-		};
-		71C3BEAB1C76B22500A00C4D /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = M;
+			name = DetailCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,11 +352,14 @@
 				7176B52E1C72C30800301AB5 /* NavModel.m in Sources */,
 				71C3BEAE1C76B26300A00C4D /* DetailCollectionViewController.m in Sources */,
 				7176B5241C71D04200301AB5 /* NavViewCell.m in Sources */,
+				71C3BEBA1C76E84800A00C4D /* DetailScrollPageViewController.m in Sources */,
 				71B957331C743D2A0070A9DF /* AppUtil.m in Sources */,
 				7176B50D1C71C7EA00301AB5 /* AppDelegate.m in Sources */,
 				7176B5211C71CBF400301AB5 /* NavViewController.m in Sources */,
 				7104D4331C7473930060E87D /* SubNavPresenter.m in Sources */,
+				71C3BEBD1C770BF500A00C4D /* DetailScrollPageViewCell.m in Sources */,
 				71C3BEB41C76B2B300A00C4D /* DetailModel.m in Sources */,
+				71C3BEC11C7719D200A00C4D /* DetailScrollPagePresenter.m in Sources */,
 				7104D42D1C746EEF0060E87D /* SubNavViewCell.m in Sources */,
 				7176B50A1C71C7EA00301AB5 /* main.m in Sources */,
 				71C3BEB11C76B29000A00C4D /* DetailCollectionViewCell.m in Sources */,

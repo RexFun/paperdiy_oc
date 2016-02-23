@@ -11,6 +11,7 @@
 @interface DetailModel : NSObject
 
 @property NSString *detailImgId;
+@property NSString *detailImgPid;
 @property NSString *detailImgSort;
 
 - (void)initWithData: (NSDictionary *) data;

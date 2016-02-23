@@ -26,28 +26,6 @@ static NSString * const reuseIdentifier = @"DataCell";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)initView {
-    //设置Title
-    self.title = _subNavName;
-    //    //初始化并显示进度圈
-    //    self.refreshControl = [[UIRefreshControl alloc] init];
-    //    [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
-    //    [self.refreshControl beginRefreshing];
-    //初始化数据
-    self.detailCollectionPresenter = [[DetailCollectionPresenter alloc] initWithCollectionView:self.collectionView andSubNavId:_subNavId];
-    [self reloadCollectionViewAction];
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -99,9 +77,39 @@ static NSString * const reuseIdentifier = @"DataCell";
 	
 }
  */
+
+#pragma mark - 初始化界面
+- (void)initView {
+    //设置Title
+    self.title = _subNavName;
+    //    //初始化并显示进度圈
+    //    self.refreshControl = [[UIRefreshControl alloc] init];
+    //    [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
+    //    [self.refreshControl beginRefreshing];
+    //初始化数据
+    self.detailCollectionPresenter = [[DetailCollectionPresenter alloc] initWithCollectionView:self.collectionView andSubNavId:_subNavId];
+    [self reloadCollectionViewAction];
+}
+
 #pragma mark - action
 - (void)reloadCollectionViewAction {
     [self.detailCollectionPresenter reloadCollectionView];
+}
+
+#pragma mark - Navigation
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //获取被点击的Cell的IndexPath
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+    //往DetailScrollPageViewController传值
+    UIViewController *detailScrollPageViewController = [segue destinationViewController];
+    [detailScrollPageViewController setValue:self.subNavId forKey:@"subNavId"];
+    [detailScrollPageViewController setValue:self.subNavName forKey:@"subNavName"];
+    [detailScrollPageViewController setValue:[self.detailCollectionPresenter.models objectAtIndex:indexPath.row].detailImgId forKey:@"detailImgId"];
+    [detailScrollPageViewController setValue:[self.detailCollectionPresenter.models objectAtIndex:indexPath.row].detailImgPid forKey:@"detailImgPid"];
+    [detailScrollPageViewController setValue:[self.detailCollectionPresenter.models objectAtIndex:indexPath.row].detailImgSort forKey:@"detailImgSort"];
+    [detailScrollPageViewController setValue:indexPath forKey:@"indexPath"];
+    
 }
 
 @end
