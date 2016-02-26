@@ -13,13 +13,10 @@
 - (void)setWithModel:(SubNavModel *)model {
     
     NSString *imgUrlStr = [NSString stringWithFormat:[AppUtil getActionUrlInPlistWithKey:@"SubNavImgAction"], model.subNavId];
-    NSURL    *imgUrl    = [NSURL URLWithString:imgUrlStr];
-    NSData   *imgData   = [NSData dataWithContentsOfURL:imgUrl];
-    
-    self.subNavImg.image = [UIImage imageWithData:imgData];
-    self.subNavId.text   = model.subNavId;
+    NSURL *imgUrl = [NSURL URLWithString:imgUrlStr];
+    [self.subNavImg sd_setImageWithURL:imgUrl placeholderImage:nil];
+    self.subNavId.text = model.subNavId;
     self.subNavName.text = model.subNavName;
-    
 }
 
 @end

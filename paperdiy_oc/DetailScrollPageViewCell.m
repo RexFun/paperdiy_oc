@@ -26,8 +26,7 @@
     //读取图片网络数据
     NSString *imgUrlStr = [NSString stringWithFormat:[AppUtil getActionUrlInPlistWithKey:@"DetailImgAction"], model.detailImgId];
     NSURL    *imgUrl    = [NSURL URLWithString:imgUrlStr];
-    NSData   *imgData   = [NSData dataWithContentsOfURL:imgUrl];
-    self.detailImgView.image = [UIImage imageWithData:imgData];
+    [self.detailImgView sd_setImageWithURL:imgUrl placeholderImage:nil];
     //读取图片id
     self.detailImgId = [[UILabel alloc] initWithFrame:CGRectMake(imgW/4, imgH/2, 50, 50)];
     self.detailImgId.text = model.detailImgId;

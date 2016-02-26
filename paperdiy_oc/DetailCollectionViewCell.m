@@ -13,8 +13,7 @@
 - (void)setWithModel:(DetailModel *)model {
     NSString *imgUrlStr = [NSString stringWithFormat:[AppUtil getActionUrlInPlistWithKey:@"DetailImgAction"], model.detailImgId];
     NSURL    *imgUrl    = [NSURL URLWithString:imgUrlStr];
-    NSData   *imgData   = [NSData dataWithContentsOfURL:imgUrl];
-    self.detailImgView.image = [UIImage imageWithData:imgData];
+    [self.detailImgView sd_setImageWithURL:imgUrl placeholderImage:nil];
     self.detailImgId.text    = model.detailImgId;
     self.detailImgSort.text  = [NSString stringWithFormat:@"第%@步", model.detailImgSort];
 }
