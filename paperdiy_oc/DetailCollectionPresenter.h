@@ -20,6 +20,7 @@
 @property NSString                      *subNavId;
 
 - (id)initWithCollectionView:(UICollectionView *)collectionView andSubNavId:(NSString *)subNavId;
-- (void)reloadCollectionView;
+- (void)pullDownRefresh;
+- (void)pullUpRefresh;
 
 @end

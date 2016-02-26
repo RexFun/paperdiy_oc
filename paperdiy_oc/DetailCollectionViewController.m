@@ -82,18 +82,30 @@ static NSString * const reuseIdentifier = @"DataCell";
 - (void)initView {
     //设置Title
     self.title = _subNavName;
-    //    //初始化并显示进度圈
-    //    self.refreshControl = [[UIRefreshControl alloc] init];
-    //    [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
-    //    [self.refreshControl beginRefreshing];
     //初始化数据
     self.detailCollectionPresenter = [[DetailCollectionPresenter alloc] initWithCollectionView:self.collectionView andSubNavId:_subNavId];
-    [self reloadCollectionViewAction];
+    //下拉刷新
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^
+                                     {
+                                         [self pullDownRefreshAction];
+                                         [self.collectionView.mj_header endRefreshing];
+                                     }];
+    //上拉刷新
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^
+                                     {
+                                         [self pullUpRefreshAction];
+                                         [self.collectionView.mj_footer endRefreshing];
+                                     }];
+    [self.collectionView.mj_header beginRefreshing];
 }
 
 #pragma mark - action
-- (void)reloadCollectionViewAction {
-    [self.detailCollectionPresenter reloadCollectionView];
+- (void)pullDownRefreshAction {
+    [self.detailCollectionPresenter pullDownRefresh];
+}
+#pragma mark - action
+- (void)pullUpRefreshAction {
+    [self.detailCollectionPresenter pullUpRefresh];
 }
 
 #pragma mark - Navigation

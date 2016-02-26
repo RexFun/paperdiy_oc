@@ -30,7 +30,6 @@
 		71C3BEBD1C770BF500A00C4D /* DetailScrollPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEBC1C770BF500A00C4D /* DetailScrollPageViewCell.m */; };
 		71C3BEC11C7719D200A00C4D /* DetailScrollPagePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEC01C7719D200A00C4D /* DetailScrollPagePresenter.m */; };
 		71ED862E1C7EE3C100026AD7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 71ED862D1C7EE3C100026AD7 /* Podfile */; };
-		71ED86301C7EF54200026AD7 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED862F1C7EF54200026AD7 /* libAFNetworking.a */; };
 		EA48DC85C8B990FB0C67C14F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6533C6958FB548B3BA1CBC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71ED86301C7EF54200026AD7 /* libAFNetworking.a in Frameworks */,
 				EA48DC85C8B990FB0C67C14F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

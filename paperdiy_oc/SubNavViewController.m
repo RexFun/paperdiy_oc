@@ -16,33 +16,45 @@
 
 static NSString * const reuseIdentifier = @"DataCell";
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self initView];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)initView {
+- (void)initView
+{
     //设置Title
     self.title = _navName;
-//    //初始化并显示进度圈
-//    self.refreshControl = [[UIRefreshControl alloc] init];
-//    [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
-//    [self.refreshControl beginRefreshing];
     //初始化数据
     self.subNavPresenter = [[SubNavPresenter alloc] initWithCollectionView:self.collectionView andNavId:_navId];
-    [self reloadCollectionViewAction];
+    //下拉刷新
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^
+                                     {
+                                         [self pullDownRefreshAction];
+                                         [self.collectionView.mj_header endRefreshing];
+                                     }];
+    //上拉刷新
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^
+                                     {
+                                         [self pullUpRefreshAction];
+                                         [self.collectionView.mj_footer endRefreshing];
+                                     }];
+    [self.collectionView.mj_header beginRefreshing];
 }
 
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     //获取被点击的Cell的IndexPath
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
     //往DetailCollectionViewController传值
@@ -106,8 +118,13 @@ static NSString * const reuseIdentifier = @"DataCell";
 
 
 #pragma mark - action
-- (void)reloadCollectionViewAction {
-    [self.subNavPresenter reloadCollectionView];
+- (void)pullDownRefreshAction {
+    [self.subNavPresenter pullDownRefresh];
+}
+
+#pragma mark - action
+- (void)pullUpRefreshAction {
+    [self.subNavPresenter pullUpRefresh];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MJRefresh.h"
 #import "DetailCollectionViewCell.h"
 #import "DetailCollectionPresenter.h"
 

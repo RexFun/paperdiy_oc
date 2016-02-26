@@ -18,13 +18,13 @@
     return self;
 }
 
-- (void)reloadCollectionView
+- (void)pullDownRefresh
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     //一定要加这段，否则报错：unacceptable content-type text/plain
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain",nil];
     //设参数
-    NSDictionary *parameters = @{@"pid":self.subNavId, @"rownum":@"0", @"pagesize":@"100"};
+    NSDictionary *parameters = @{@"pid":self.subNavId, @"rownum":@"0", @"pagesize":@"5"};
     //发请求
     [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] parameters:parameters
           success:^(NSURLSessionTask *task, id responseObject)
@@ -34,6 +34,35 @@
          NSArray *datas = responseObject;
          //清除旧记录
          [self.models removeAllObjects];
+         //加载新记录
+         for(NSDictionary *data in datas) {
+             DetailModel *o = [[DetailModel alloc] init];
+             [o initWithData:data];
+             [self.models addObject:o];
+         }
+         //刷新tableView
+         [self.collectionView reloadData];
+     }
+          failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
+}
+
+- (void)pullUpRefresh
+{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //一定要加这段，否则报错：unacceptable content-type text/plain
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain",nil];
+    //设参数
+    NSDictionary *parameters = @{@"pid":self.subNavId, @"rownum":[NSNumber numberWithLong:self.models.count], @"pagesize":@"5"};
+    //发请求
+    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] parameters:parameters
+          success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSLog(@"JSON: %@", responseObject);
+         //获取json数据
+         NSArray *datas = responseObject;
          //加载新记录
          for(NSDictionary *data in datas) {
              DetailModel *o = [[DetailModel alloc] init];
