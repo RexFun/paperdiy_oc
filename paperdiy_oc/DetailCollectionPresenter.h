@@ -6,8 +6,9 @@
 //  Copyright © 2016年 rexfun. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
 #import "AppUtil.h"
 #import "DetailModel.h"
 

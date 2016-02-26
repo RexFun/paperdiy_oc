@@ -11,7 +11,8 @@
 @implementation DetailScrollPagePresenter
 
 #pragma mark - 初始化presenter
-- (id)initWithCtx:(UIViewController *)ctx andScrollView:(UIScrollView *)scrollView andPageControl:(UIPageControl *) pageControl andSubNavId:(NSString *)subNavId andIndexPath:(NSIndexPath *)indexPath{
+- (id)initWithCtx:(UIViewController *)ctx andScrollView:(UIScrollView *)scrollView andPageControl:(UIPageControl *) pageControl andSubNavId:(NSString *)subNavId andIndexPath:(NSIndexPath *)indexPath
+{
     self.models      = [[NSMutableArray alloc] init];
     self.ctx         = ctx;
     self.scrollView  = scrollView;
@@ -22,49 +23,82 @@
 }
 
 #pragma mark - 刷新View
-- (void)reloadView {
-    //初始化请求路径url
-    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"DetailPageAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url       = [NSURL URLWithString:urlStr];
-    //初始化request
-    // 1.
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
-    // 2.
-    [request setHTTPMethod:@"POST"];
-    // 3. 数据体
-    NSString *params = [[NSString alloc] initWithFormat:@"pid=%@", self.subNavId];
-    // 4. 将字符串转换成数据
-    NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    [request setHTTPBody:postData];
-    //发送异步请求
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        if (connectionError) {
-            NSLog(@"%@",connectionError.localizedDescription);
-        } else {
-            //获取json数据
-            NSArray *datas = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: nil];
-            //清除旧记录
-            [self.models removeAllObjects];
-            //加载新记录
-            for(NSDictionary *data in datas) {
-                DetailModel *o = [[DetailModel alloc] init];
-                [o initWithData:data];
-                [self.models addObject:o];
-            }
-            //刷新View
-            [self drawView];
-        }
-    }];
+- (void)reloadView
+{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //一定要加这段，否则报错：unacceptable content-type text/plain
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain",nil];
+    //设参数
+    NSDictionary *parameters = @{@"pid":self.subNavId};
+    //发请求
+    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailPageAction"] parameters:parameters
+          success:^(NSURLSessionTask *task, id responseObject)
+     {
+         NSLog(@"JSON: %@", responseObject);
+         //获取json数据
+         NSArray *datas = responseObject;
+         //清除旧记录
+         [self.models removeAllObjects];
+         //加载新记录
+         for(NSDictionary *data in datas) {
+             DetailModel *o = [[DetailModel alloc] init];
+             [o initWithData:data];
+             [self.models addObject:o];
+         }
+         //刷新View
+         [self drawView];
+     }
+          failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
 }
+// 原生API HTTP请求
+//- (void)reloadView {
+//    //初始化请求路径url
+//    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"DetailPageAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSURL *url       = [NSURL URLWithString:urlStr];
+//    //初始化request
+//    // 1.
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:0 timeoutInterval:15.0f];
+//    // 2.
+//    [request setHTTPMethod:@"POST"];
+//    // 3. 数据体
+//    NSString *params = [[NSString alloc] initWithFormat:@"pid=%@", self.subNavId];
+//    // 4. 将字符串转换成数据
+//    NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+//    [request setHTTPBody:postData];
+//    //发送异步请求
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//        if (connectionError) {
+//            NSLog(@"%@",connectionError.localizedDescription);
+//        } else {
+//            //获取json数据
+//            NSArray *datas = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: nil];
+//            //清除旧记录
+//            [self.models removeAllObjects];
+//            //加载新记录
+//            for(NSDictionary *data in datas) {
+//                DetailModel *o = [[DetailModel alloc] init];
+//                [o initWithData:data];
+//                [self.models addObject:o];
+//            }
+//            //刷新View
+//            [self drawView];
+//        }
+//    }];
+//}
 
 #pragma mark - 绘制scrollView和pageControl
-- (void)drawView {
+- (void)drawView
+{
     //获取屏幕高宽
     CGFloat imageW = self.scrollView.bounds.size.width;
     CGFloat imageH = self.scrollView.bounds.size.height;
     CGFloat imageY = self.scrollView.bounds.origin.y;
     //为scrollView遍历添加子cellView
-    for (NSInteger i = 0; i < self.models.count; i++) {
+    for (NSInteger i = 0; i < self.models.count; i++)
+    {
         DetailScrollPageViewCell *cell = [[DetailScrollPageViewCell alloc] initWithFrame:CGRectMake(imageW*i, imageY, imageW, imageH)];
         [cell setWithModel: [self.models objectAtIndex:i]];
         [self.scrollView addSubview:cell];
@@ -84,7 +118,8 @@
 }
 
 #pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
     //如何计算当前滚动到了第几页
     // 1.获取滚动的x方向的偏移量
     CGFloat offsetX = self.scrollView.contentOffset.x;
@@ -99,7 +134,8 @@
 }
 
 #pragma mark - 设置title 显示第几步
-- (void) setCtxTitle:(int *)page {
+- (void) setCtxTitle:(int *)page
+{
     self.ctx.title = [NSString stringWithFormat:@"第%i步", page];
 }
 @end
