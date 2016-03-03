@@ -11,6 +11,7 @@
 
 @interface NavViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *navImg;
 @property (weak, nonatomic) IBOutlet UILabel *navId;
 @property (weak, nonatomic) IBOutlet UILabel *navName;
 @property (weak, nonatomic) IBOutlet UILabel *navQty;

@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DataCell" id="TUP-v5-oZ8" customClass="NavViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TUP-v5-oZ8" id="a1H-Rb-73E">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -42,10 +42,15 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavIcon" highlightedImage="NavIcon" id="lBy-Gf-L4e">
+                                            <rect key="frame" x="19" y="6" width="32" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="navId" destination="cEU-4b-Lvs" id="KJm-nE-xwT"/>
+                                    <outlet property="navImg" destination="lBy-Gf-L4e" id="8zV-Zg-cto"/>
                                     <outlet property="navName" destination="5Am-ey-G0h" id="hGL-3C-YMR"/>
                                     <outlet property="navQty" destination="Aqa-mF-Qxc" id="PCj-JG-EnA"/>
                                     <segue destination="TS5-b2-Evb" kind="push" id="EPA-3E-dRu"/>
@@ -63,7 +68,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFk-BG-7XE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="505" y="23"/>
+            <point key="canvasLocation" x="504.5" y="22.5"/>
         </scene>
         <!--Sub Nav View Controller-->
         <scene sceneID="Ait-KJ-wpq">
@@ -81,7 +86,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DataCell" id="pRg-EU-Y7t" customClass="SubNavViewCell">
-                                <rect key="frame" x="10" y="10" width="172" height="186"/>
+                                <rect key="frame" x="10" y="74" width="172" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="172" height="186"/>
@@ -146,7 +151,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DataCell" id="wFr-jV-Dnc" customClass="DetailCollectionViewCell">
-                                <rect key="frame" x="10" y="74" width="355" height="290"/>
+                                <rect key="frame" x="10" y="10" width="355" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="355" height="290"/>
@@ -244,4 +249,7 @@
             <point key="canvasLocation" x="48" y="23"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NavIcon" width="44" height="44"/>
+    </resources>
 </document>
