@@ -11,7 +11,7 @@
 #import "SubNavViewCell.h"
 #import "SubNavPresenter.h"
 
-@interface SubNavViewController : UICollectionViewController
+@interface SubNavViewController : UICollectionViewController<UICollectionViewDelegateFlowLayout>
 
 @property(strong,nonatomic)NSValue *navId;//接收来自NavView  controller传来的值
 @property(strong,nonatomic)NSValue *navName;//接收来自NavView  controller传来的值

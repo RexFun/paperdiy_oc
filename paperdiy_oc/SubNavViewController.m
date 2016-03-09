@@ -86,7 +86,35 @@ static NSString * const reuseIdentifier = @"DataCell";
 }
 
 #pragma mark <UICollectionViewDelegate>
+//  设置每个元素大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = rect.size.width;
+    CGFloat cellWidth = screenWidth - 25;
+    CGFloat cellHeight = cellWidth * 0.8 + 25;
+    return CGSizeMake(cellWidth, cellHeight);
+    
+}
 
+//  定义每个元素的margin(边缘 上-左-下-右)
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    
+    return UIEdgeInsetsMake(10, 10, 10, 10);
+    
+}
+//
+////  定义单元格所在行line之间的距离,前一行和后一行的距离
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+//    
+//    return 20;
+//}
+//
+////  定义每个单元格相互之间的距离
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+//    
+//    return 0;  
+//    
+//}
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -115,7 +143,6 @@ static NSString * const reuseIdentifier = @"DataCell";
 	
 }
 */
-
 
 #pragma mark - action
 - (void)pullDownRefreshAction {
