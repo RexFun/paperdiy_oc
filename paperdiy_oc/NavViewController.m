@@ -25,6 +25,8 @@
 }
 
 - (void)initView {
+    //不显示多余的空Cell
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     //初始化并显示进度圈
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
