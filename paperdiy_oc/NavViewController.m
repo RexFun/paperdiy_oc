@@ -41,6 +41,9 @@
     [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
     [self.refreshControl beginRefreshing];
     
+    /*--- 不显示多余的空Cell -------------------------------------------------------*/
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     /*--- 初始化数据 -------------------------------------------------------*/
     self.navPresenter = [[NavPresenter alloc] initWithTableView:self.tableView andRefreshControl:self.refreshControl];
     [self reloadTableViewAction];
