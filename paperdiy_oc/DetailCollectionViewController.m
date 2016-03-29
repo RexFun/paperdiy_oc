@@ -31,9 +31,17 @@ static NSString * const reuseIdentifier = @"DataCell";
     NSLog(@"%f",velocity.y);
     if (velocity.y > 0.0) {
         //向上滑动隐藏导航栏
+        CATransition *animation = [CATransition animation];
+        animation.type = kCATransitionFade;
+        animation.duration = 0.4;
+        [self.navigationController.navigationBar.layer addAnimation:animation forKey:nil];
         self.navigationController.navigationBar.hidden = YES;
     } else {
         //向下滑动显示导航栏
+        CATransition *animation = [CATransition animation];
+        animation.type = kCATransitionFade;
+        animation.duration = 0.4;
+        [self.navigationController.navigationBar.layer addAnimation:animation forKey:nil];
         self.navigationController.navigationBar.hidden = NO;
     }
 }
