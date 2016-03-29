@@ -25,14 +25,27 @@
 }
 
 - (void)initView {
-    //初始化并显示进度圈
+    /*--- 设置navigation bar ----------------------------------------------*/
+    // 改变状态栏为黑底白字（默认白底黑字）
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    // 背景色
+//    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    // barItem字体颜色
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    // titile标题色
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+//    self.navigationController.navigationBar.translucent = NO;
+    
+    /*--- 设置进度圈 -------------------------------------------------------*/
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reloadTableViewAction) forControlEvents:UIControlEventValueChanged];
     [self.refreshControl beginRefreshing];
-    //初始化数据
+    
+    /*--- 初始化数据 -------------------------------------------------------*/
     self.navPresenter = [[NavPresenter alloc] initWithTableView:self.tableView andRefreshControl:self.refreshControl];
     [self reloadTableViewAction];
 }
+
 
 #pragma mark - Table view data source
 

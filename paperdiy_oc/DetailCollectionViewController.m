@@ -26,6 +26,18 @@ static NSString * const reuseIdentifier = @"DataCell";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark 滑动scrollView，并且手指离开时执行。一次有效滑动，只执行一次。 当pagingEnabled属性为YES时，不调用，该方法
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    NSLog(@"%f",velocity.y);
+    if (velocity.y > 0.0) {
+        //向上滑动隐藏导航栏
+        self.navigationController.navigationBar.hidden = YES;
+    } else {
+        //向下滑动显示导航栏
+        self.navigationController.navigationBar.hidden = NO;
+    }
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

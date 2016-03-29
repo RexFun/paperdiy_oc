@@ -123,9 +123,13 @@
     //如何计算当前滚动到了第几页
     // 1.获取滚动的x方向的偏移量
     CGFloat offsetX = self.scrollView.contentOffset.x;
+//    NSLog(@"@offsetX1 -> %@",offsetX);
     offsetX = offsetX + self.scrollView.frame.size.width/2;
+//    NSLog(@"@offsetX2 -> %@",offsetX);
     // 2.用x方向的偏移量除以一张图片的宽度，取商就是当前滚动到了第几页
     int index = offsetX/self.scrollView.frame.size.width;
+//    NSLog(@"@self.scrollView.frame.size.width -> %@",self.scrollView.frame.size.width);
+//    NSLog(@"@index -> %@",index);
     int page = [[self.models objectAtIndex:index].detailImgSort intValue];
     // 3.将页码赋值给UIPageControl
     self.pageControl.currentPage = page-1;
