@@ -21,6 +21,17 @@ static NSString * const reuseIdentifier = @"DataCell";
     [self initView];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    // 恢复显示导航栏
+    if ([self.navigationController.navigationBar isHidden]) {
+        CATransition *animation = [CATransition animation];
+        animation.type = kCATransitionFade;
+        animation.duration = 0.4;
+        [self.navigationController.navigationBar.layer addAnimation:animation forKey:nil];
+        self.navigationController.navigationBar.hidden = NO;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
