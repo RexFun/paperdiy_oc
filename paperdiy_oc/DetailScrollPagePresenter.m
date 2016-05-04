@@ -95,6 +95,7 @@
     //获取屏幕高宽
     CGFloat imageW = self.scrollView.bounds.size.width;
     CGFloat imageH = self.scrollView.bounds.size.height;
+    NSLog(@"imageH -> %f",imageH);
     CGFloat imageY = self.scrollView.bounds.origin.y;
     //为scrollView遍历添加子cellView
     for (NSInteger i = 0; i < self.models.count; i++)
