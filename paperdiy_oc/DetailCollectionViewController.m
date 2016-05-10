@@ -70,9 +70,22 @@ static NSString * const reuseIdentifier = @"DataCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     //获取Cell对象
     DetailCollectionViewCell *cell = (DetailCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    //加边框颜色
-    cell.layer.borderWidth = 1.0f;
-    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//    //加边框颜色
+//    cell.layer.borderWidth = 1.0f;
+//    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    //圆角
+    cell.layer.cornerRadius = 7;
+    cell.contentView.layer.cornerRadius = 7.0f;
+    cell.contentView.layer.borderWidth = 0.7f;
+    cell.contentView.layer.borderColor = [UIColor clearColor].CGColor;
+    cell.contentView.layer.masksToBounds = YES;
+    //阴影
+    cell.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.layer.shadowOffset = CGSizeMake(2,2);
+    cell.layer.shadowRadius = 2.0f;
+    cell.layer.shadowOpacity = 0.4f;
+    cell.layer.masksToBounds = NO;
+    cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
     //从model装载数据
     [cell setWithModel:[self.detailCollectionPresenter.models objectAtIndex:indexPath.row]];
     return cell;

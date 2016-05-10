@@ -14,7 +14,7 @@
     
     NSString *imgUrlStr = [NSString stringWithFormat:[AppUtil getActionUrlInPlistWithKey:@"SubNavImgAction"], model.subNavId];
     NSURL *imgUrl = [NSURL URLWithString:imgUrlStr];
-    [self.subNavImg sd_setImageWithURL:imgUrl placeholderImage:nil];
+    [self.subNavImg sd_setImageWithURL:imgUrl placeholderImage:[UIImage imageNamed:@"Placeholder.pdf"]];
     self.subNavId.text = model.subNavId;
     self.subNavName.text = model.subNavName;
 }

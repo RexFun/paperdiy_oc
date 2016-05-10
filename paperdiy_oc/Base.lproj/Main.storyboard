@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OXj-rU-mro">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OXj-rU-mro">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--首页-->
+        <!--Paper Diy-->
         <scene sceneID="NbN-5C-RGg">
             <objects>
                 <tableViewController id="e6i-Y1-DEb" customClass="NavViewController" sceneMemberID="viewController">
@@ -80,7 +80,7 @@
                             <outlet property="delegate" destination="e6i-Y1-DEb" id="IVQ-rz-fqc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="首页" id="cQW-tv-lxv"/>
+                    <navigationItem key="navigationItem" title="Paper Diy" id="cQW-tv-lxv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFk-BG-7XE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,11 +118,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uu5-QI-SYh" userLabel="Sub Nav Name Bg">
-                                            <rect key="frame" x="0.0" y="153" width="304" height="66"/>
+                                            <rect key="frame" x="0.0" y="186" width="304" height="33"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuL-NJ-0g9">
-                                            <rect key="frame" x="131" y="176" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuL-NJ-0g9">
+                                            <rect key="frame" x="130" y="192" width="45" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                     <constraint firstItem="NtP-nu-6WZ" firstAttribute="centerX" secondItem="pRg-EU-Y7t" secondAttribute="centerX" id="Sre-fL-R3N"/>
                                     <constraint firstItem="NtP-nu-6WZ" firstAttribute="height" secondItem="pRg-EU-Y7t" secondAttribute="height" id="V6z-Ae-ESh"/>
                                     <constraint firstItem="NtP-nu-6WZ" firstAttribute="width" secondItem="pRg-EU-Y7t" secondAttribute="width" id="Zts-i7-qLY"/>
-                                    <constraint firstItem="Uu5-QI-SYh" firstAttribute="height" secondItem="NtP-nu-6WZ" secondAttribute="height" multiplier="0.3" id="ev9-vt-Mwg"/>
+                                    <constraint firstItem="Uu5-QI-SYh" firstAttribute="height" secondItem="NtP-nu-6WZ" secondAttribute="height" multiplier="0.15" id="ev9-vt-Mwg"/>
                                     <constraint firstItem="Uu5-QI-SYh" firstAttribute="width" secondItem="NtP-nu-6WZ" secondAttribute="width" id="hrj-Ai-23G" userLabel="Sub Nav Name Bg.width = width"/>
                                     <constraint firstItem="Uu5-QI-SYh" firstAttribute="trailing" secondItem="pRg-EU-Y7t" secondAttribute="trailing" id="ub1-CP-4bv"/>
                                     <constraint firstItem="NtP-nu-6WZ" firstAttribute="centerY" secondItem="pRg-EU-Y7t" secondAttribute="centerY" id="wq2-VZ-eZi"/>
@@ -203,6 +203,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="WIO-ft-XIg" firstAttribute="height" secondItem="wFr-jV-Dnc" secondAttribute="height" multiplier="0.8" id="G7k-ch-vl8"/>
                                     <constraint firstItem="Jth-QU-D6d" firstAttribute="centerX" secondItem="wFr-jV-Dnc" secondAttribute="centerX" id="MEP-vf-zOm"/>

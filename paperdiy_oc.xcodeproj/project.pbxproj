@@ -42,7 +42,7 @@
 		7104D42F1C746F350060E87D /* SubNavModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavModel.m; sourceTree = "<group>"; };
 		7104D4311C7473930060E87D /* SubNavPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubNavPresenter.h; sourceTree = "<group>"; };
 		7104D4321C7473930060E87D /* SubNavPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavPresenter.m; sourceTree = "<group>"; };
-		7176B5051C71C7EA00301AB5 /* paperdiy_oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paperdiy_oc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7176B5051C71C7EA00301AB5 /* Paper Diy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paper Diy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7176B5091C71C7EA00301AB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7176B50B1C71C7EA00301AB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7176B50C1C71C7EA00301AB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		7176B5061C71C7EA00301AB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7176B5051C71C7EA00301AB5 /* paperdiy_oc.app */,
+				7176B5051C71C7EA00301AB5 /* Paper Diy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -309,9 +309,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7176B5041C71C7EA00301AB5 /* paperdiy_oc */ = {
+		7176B5041C71C7EA00301AB5 /* Paper Diy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7176B51C1C71C7EA00301AB5 /* Build configuration list for PBXNativeTarget "paperdiy_oc" */;
+			buildConfigurationList = 7176B51C1C71C7EA00301AB5 /* Build configuration list for PBXNativeTarget "Paper Diy" */;
 			buildPhases = (
 				E7E28D8DC2A9AA1AFFA5D3C3 /* Check Pods Manifest.lock */,
 				7176B5011C71C7EA00301AB5 /* Sources */,
@@ -324,9 +324,9 @@
 			);
 			dependencies = (
 			);
-			name = paperdiy_oc;
+			name = "Paper Diy";
 			productName = paperdiy_oc;
-			productReference = 7176B5051C71C7EA00301AB5 /* paperdiy_oc.app */;
+			productReference = 7176B5051C71C7EA00301AB5 /* Paper Diy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -357,7 +357,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7176B5041C71C7EA00301AB5 /* paperdiy_oc */,
+				7176B5041C71C7EA00301AB5 /* Paper Diy */,
 			);
 		};
 /* End PBXProject section */
@@ -568,7 +568,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ole.paperdiy-oc";
+				PRODUCT_BUNDLE_IDENTIFIER = ole.paperdiy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -587,7 +587,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ole.paperdiy-oc";
+				PRODUCT_BUNDLE_IDENTIFIER = ole.paperdiy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -605,7 +605,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7176B51C1C71C7EA00301AB5 /* Build configuration list for PBXNativeTarget "paperdiy_oc" */ = {
+		7176B51C1C71C7EA00301AB5 /* Build configuration list for PBXNativeTarget "Paper Diy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7176B51D1C71C7EA00301AB5 /* Debug */,
