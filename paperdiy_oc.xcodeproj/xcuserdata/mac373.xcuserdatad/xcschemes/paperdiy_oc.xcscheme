@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7176B5041C71C7EA00301AB5"
-               BuildableName = "paperdiy_oc.app"
-               BlueprintName = "paperdiy_oc"
+               BuildableName = "Paper Diy.app"
+               BlueprintName = "Paper Diy"
                ReferencedContainer = "container:paperdiy_oc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7176B5041C71C7EA00301AB5"
-            BuildableName = "paperdiy_oc.app"
-            BlueprintName = "paperdiy_oc"
+            BuildableName = "Paper Diy.app"
+            BlueprintName = "Paper Diy"
             ReferencedContainer = "container:paperdiy_oc.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7176B5041C71C7EA00301AB5"
-            BuildableName = "paperdiy_oc.app"
-            BlueprintName = "paperdiy_oc"
+            BuildableName = "Paper Diy.app"
+            BlueprintName = "Paper Diy"
             ReferencedContainer = "container:paperdiy_oc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7176B5041C71C7EA00301AB5"
-            BuildableName = "paperdiy_oc.app"
-            BlueprintName = "paperdiy_oc"
+            BuildableName = "Paper Diy.app"
+            BlueprintName = "Paper Diy"
             ReferencedContainer = "container:paperdiy_oc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

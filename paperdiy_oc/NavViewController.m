@@ -67,6 +67,8 @@
 //        cell = [[NavViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
 //    }
     [cell setWithModel:[self.navPresenter.models objectAtIndex:indexPath.row]];
+    // 设置分割线长度
+    [cell setSeparatorInset:UIEdgeInsetsMake(0, 80, 0, 0)];//分割线设置 上 左 下 右
     return cell;
 }
 

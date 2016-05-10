@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -23,46 +22,45 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavQtyBg" highlightedImage="NavQtyBg" translatesAutoresizingMaskIntoConstraints="NO" id="Wmm-5h-7Qa">
-                                            <rect key="frame" x="520" y="2" width="39" height="39"/>
-                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavIcon" highlightedImage="NavIcon" translatesAutoresizingMaskIntoConstraints="NO" id="lBy-Gf-L4e">
-                                            <rect key="frame" x="9" y="9" width="40" height="25"/>
+                                            <rect key="frame" x="20" y="2" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="2DA-vg-fab"/>
-                                                <constraint firstAttribute="height" constant="25" id="9xN-u2-CfP"/>
+                                                <constraint firstAttribute="height" constant="40" id="9xN-u2-CfP"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Am-ey-G0h">
-                                            <rect key="frame" x="69" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="80" y="11" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="Bvh-kg-Adr"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqa-mF-Qxc">
-                                            <rect key="frame" x="518" y="12" width="43" height="20"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="frame" x="125" y="12" width="40" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEU-4b-Lvs">
-                                            <rect key="frame" x="473" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="263" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Wmm-5h-7Qa" firstAttribute="centerY" secondItem="a1H-Rb-73E" secondAttribute="centerY" id="5vS-4U-Lfk"/>
-                                        <constraint firstItem="cEU-4b-Lvs" firstAttribute="trailing" secondItem="Wmm-5h-7Qa" secondAttribute="leading" constant="-5" id="F2Y-af-Oiq"/>
+                                        <constraint firstItem="Aqa-mF-Qxc" firstAttribute="baseline" secondItem="cEU-4b-Lvs" secondAttribute="baseline" id="2hq-nP-aYb"/>
+                                        <constraint firstItem="cEU-4b-Lvs" firstAttribute="centerY" secondItem="a1H-Rb-73E" secondAttribute="centerY" id="8ei-4L-bsF"/>
                                         <constraint firstItem="5Am-ey-G0h" firstAttribute="centerY" secondItem="a1H-Rb-73E" secondAttribute="centerY" id="Gf5-Mr-9T0"/>
-                                        <constraint firstItem="lBy-Gf-L4e" firstAttribute="leading" secondItem="a1H-Rb-73E" secondAttribute="leadingMargin" constant="1" id="HTc-Lr-vrr"/>
+                                        <constraint firstItem="Aqa-mF-Qxc" firstAttribute="leading" secondItem="5Am-ey-G0h" secondAttribute="trailing" constant="3" id="Uvy-rv-oNt"/>
                                         <constraint firstItem="Aqa-mF-Qxc" firstAttribute="centerY" secondItem="a1H-Rb-73E" secondAttribute="centerY" id="doe-CJ-lTZ"/>
                                         <constraint firstItem="lBy-Gf-L4e" firstAttribute="centerY" secondItem="a1H-Rb-73E" secondAttribute="centerY" id="gIy-zk-eNU"/>
+                                        <constraint firstItem="cEU-4b-Lvs" firstAttribute="centerX" secondItem="a1H-Rb-73E" secondAttribute="centerX" id="gZb-g4-Vfn"/>
                                         <constraint firstItem="5Am-ey-G0h" firstAttribute="leading" secondItem="lBy-Gf-L4e" secondAttribute="trailing" constant="20" id="m4i-OG-fNs"/>
-                                        <constraint firstItem="Wmm-5h-7Qa" firstAttribute="trailing" secondItem="a1H-Rb-73E" secondAttribute="trailingMargin" id="mxh-LP-C6O"/>
-                                        <constraint firstItem="Aqa-mF-Qxc" firstAttribute="centerX" secondItem="Wmm-5h-7Qa" secondAttribute="centerX" id="qKB-na-daC"/>
-                                        <constraint firstItem="cEU-4b-Lvs" firstAttribute="centerY" secondItem="Wmm-5h-7Qa" secondAttribute="centerY" id="wvR-5v-ps5"/>
+                                        <constraint firstItem="lBy-Gf-L4e" firstAttribute="leading" secondItem="a1H-Rb-73E" secondAttribute="leading" constant="20" id="z3g-qK-r6I"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -194,9 +192,9 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jth-QU-D6d">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jth-QU-D6d">
                                             <rect key="frame" x="131" y="250" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -297,7 +295,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NavIcon" width="51" height="33"/>
-        <image name="NavQtyBg" width="39" height="39"/>
+        <image name="NavIcon" width="60" height="60"/>
     </resources>
 </document>

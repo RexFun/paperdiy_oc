@@ -15,7 +15,7 @@
     NSURL    *imgUrl    = [NSURL URLWithString:imgUrlStr];
     [self.detailImgView sd_setImageWithURL:imgUrl placeholderImage:[UIImage imageNamed:@"Placeholder.pdf"]];
     self.detailImgId.text    = model.detailImgId;
-    self.detailImgSort.text  = [NSString stringWithFormat:@"第%@步", model.detailImgSort];
+    self.detailImgSort.text  = [NSString stringWithFormat:@"第 %@ 步", model.detailImgSort];
 }
 
 @end
