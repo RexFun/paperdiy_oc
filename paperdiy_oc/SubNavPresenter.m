@@ -34,6 +34,9 @@
         NSArray *datas = responseObject;
         //清除旧记录
         [self.models removeAllObjects];
+        //清除图片缓存
+        [[SDImageCache sharedImageCache] clearDisk];
+        [[SDImageCache sharedImageCache] clearMemory];
         //加载新记录
         for(NSDictionary *data in datas)
         {
