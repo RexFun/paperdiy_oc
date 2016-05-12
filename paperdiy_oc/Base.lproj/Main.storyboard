@@ -192,8 +192,9 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jth-QU-D6d">
-                                            <rect key="frame" x="131" y="250" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jth-QU-D6d">
+                                            <rect key="frame" x="0.0" y="232" width="304" height="57"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -205,11 +206,14 @@
                                 <constraints>
                                     <constraint firstItem="WIO-ft-XIg" firstAttribute="height" secondItem="wFr-jV-Dnc" secondAttribute="height" multiplier="0.8" id="G7k-ch-vl8"/>
                                     <constraint firstItem="Jth-QU-D6d" firstAttribute="centerX" secondItem="wFr-jV-Dnc" secondAttribute="centerX" id="MEP-vf-zOm"/>
+                                    <constraint firstItem="Jth-QU-D6d" firstAttribute="bottom" secondItem="wFr-jV-Dnc" secondAttribute="bottom" id="OCd-Ih-KFa"/>
                                     <constraint firstItem="WIO-ft-XIg" firstAttribute="top" secondItem="wFr-jV-Dnc" secondAttribute="top" id="UAa-Wr-VEL"/>
                                     <constraint firstItem="WIO-ft-XIg" firstAttribute="trailing" secondItem="wFr-jV-Dnc" secondAttribute="trailing" id="Ynu-h6-fwR"/>
-                                    <constraint firstItem="Jth-QU-D6d" firstAttribute="top" secondItem="WIO-ft-XIg" secondAttribute="bottom" constant="18" id="YyV-5F-R7s"/>
+                                    <constraint firstItem="Jth-QU-D6d" firstAttribute="trailing" secondItem="wFr-jV-Dnc" secondAttribute="trailing" id="aZL-Wp-kpp"/>
                                     <constraint firstItem="WIO-ft-XIg" firstAttribute="leading" secondItem="wFr-jV-Dnc" secondAttribute="leading" id="eWK-9N-CH0"/>
                                     <constraint firstItem="WIO-ft-XIg" firstAttribute="width" secondItem="wFr-jV-Dnc" secondAttribute="width" id="g5j-uZ-Sm2"/>
+                                    <constraint firstItem="Jth-QU-D6d" firstAttribute="top" secondItem="WIO-ft-XIg" secondAttribute="bottom" id="rcc-Hr-hqY"/>
+                                    <constraint firstItem="Jth-QU-D6d" firstAttribute="leading" secondItem="wFr-jV-Dnc" secondAttribute="leading" id="tSN-gr-ZnA"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="detailImgId" destination="16M-Dy-Tjd" id="PYp-CX-ViI"/>

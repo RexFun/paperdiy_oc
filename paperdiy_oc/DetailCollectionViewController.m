@@ -86,6 +86,8 @@ static NSString * const reuseIdentifier = @"DataCell";
     cell.layer.shadowOpacity = 0.4f;
     cell.layer.masksToBounds = NO;
     cell.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:cell.bounds cornerRadius:cell.contentView.layer.cornerRadius].CGPath;
+    //背景
+    [cell setBackgroundColor:[UIColor lightGrayColor]];
     //从model装载数据
     [cell setWithModel:[self.detailCollectionPresenter.models objectAtIndex:indexPath.row]];
     return cell;
