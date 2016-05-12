@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+#import "MJRefresh.h"
 #import "AppUtil.h"
 #import "DetailModel.h"
 

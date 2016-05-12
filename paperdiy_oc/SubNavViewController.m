@@ -46,6 +46,7 @@ static NSString * const reuseIdentifier = @"DataCell";
                                          [self pullUpRefreshAction];
                                          [self.collectionView.mj_footer endRefreshing];
                                      }];
+    //进入界面即下拉刷新
     [self.collectionView.mj_header beginRefreshing];
 }
 
