@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "MJRefresh.h"
 #import "AppUtil.h"
 #import "SubNavModel.h"
 

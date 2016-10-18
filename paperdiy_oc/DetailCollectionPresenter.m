@@ -32,16 +32,24 @@
          NSLog(@"JSON: %@", responseObject);
          //获取json数据
          NSArray *datas = responseObject;
-         //清除旧记录
-         [self.models removeAllObjects];
-         //加载新记录
-         for(NSDictionary *data in datas) {
-             DetailModel *o = [[DetailModel alloc] init];
-             [o initWithData:data];
-             [self.models addObject:o];
+         if(datas.count > 0)
+         {
+             //清除旧记录
+             [self.models removeAllObjects];
+             //加载新记录
+             for(NSDictionary *data in datas) {
+                 DetailModel *o = [[DetailModel alloc] init];
+                 [o initWithData:data];
+                 [self.models addObject:o];
+             }
+             //刷新tableView
+             [self.collectionView reloadData];
          }
-         //刷新tableView
-         [self.collectionView reloadData];
+         else
+         {
+             //全部加载完毕
+             [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+         }
      }
           failure:^(NSURLSessionTask *operation, NSError *error)
      {
@@ -63,14 +71,22 @@
          NSLog(@"JSON: %@", responseObject);
          //获取json数据
          NSArray *datas = responseObject;
-         //加载新记录
-         for(NSDictionary *data in datas) {
-             DetailModel *o = [[DetailModel alloc] init];
-             [o initWithData:data];
-             [self.models addObject:o];
+         if(datas.count > 0)
+         {
+             //加载新记录
+             for(NSDictionary *data in datas) {
+                 DetailModel *o = [[DetailModel alloc] init];
+                 [o initWithData:data];
+                 [self.models addObject:o];
+             }
+             //刷新tableView
+             [self.collectionView reloadData];
          }
-         //刷新tableView
-         [self.collectionView reloadData];
+         else
+         {
+             //全部加载完毕
+             [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+         }
      }
           failure:^(NSURLSessionTask *operation, NSError *error)
      {

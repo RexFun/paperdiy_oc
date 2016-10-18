@@ -32,21 +32,28 @@
         NSLog(@"JSON: %@", responseObject);
         //获取json数据
         NSArray *datas = responseObject;
-        //清除旧记录
-        [self.models removeAllObjects];
-        //清除图片缓存
-        [[SDImageCache sharedImageCache] clearDisk];
-        [[SDImageCache sharedImageCache] clearMemory];
-        //加载新记录
-        for(NSDictionary *data in datas)
+        if(datas.count > 0)
         {
-            SubNavModel *o = [[SubNavModel alloc] init];
-            [o initWithData:data];
-            [self.models addObject:o];
+            //清除旧记录
+            [self.models removeAllObjects];
+            //清除图片缓存
+            [[SDImageCache sharedImageCache] clearDisk];
+            [[SDImageCache sharedImageCache] clearMemory];
+            //加载新记录
+            for(NSDictionary *data in datas)
+            {
+                SubNavModel *o = [[SubNavModel alloc] init];
+                [o initWithData:data];
+                [self.models addObject:o];
+            }
+            //刷新tableView
+            [self.collectionView reloadData];
         }
-        //刷新tableView
-        [self.collectionView reloadData];
-
+        else
+        {
+            //全部加载完毕
+            [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        }
     }
     failure:^(NSURLSessionTask *operation, NSError *error)
     {
@@ -68,15 +75,24 @@
          NSLog(@"JSON: %@", responseObject);
          //获取json数据
          NSArray *datas = responseObject;
-         //加载新记录
-         for(NSDictionary *data in datas)
+         if(datas.count > 0)
          {
-             SubNavModel *o = [[SubNavModel alloc] init];
-             [o initWithData:data];
-             [self.models addObject:o];
+             //加载新记录
+             for(NSDictionary *data in datas)
+             {
+                 SubNavModel *o = [[SubNavModel alloc] init];
+                 [o initWithData:data];
+                 [self.models addObject:o];
+             }
+             //刷新tableView
+             [self.collectionView reloadData];
          }
-         //刷新tableView
-         [self.collectionView reloadData];
+         else
+         {
+             //全部加载完毕
+             [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+         }
+         
      }
           failure:^(NSURLSessionTask *operation, NSError *error)
      {
