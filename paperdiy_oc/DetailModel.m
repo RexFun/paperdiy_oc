@@ -14,6 +14,7 @@
     self.detailImgId   = [NSString stringWithFormat:@"%@",[data objectForKey:@"ID"]];
     self.detailImgPid  = [NSString stringWithFormat:@"%@",[data objectForKey:@"PID"]];
     self.detailImgSort = [NSString stringWithFormat:@"%@",[data objectForKey:@"SORT"]];
+    self.detailImgUrl = [[AppUtil getActionUrlInPlistWithKey:@"AppImagePath"] stringByAppendingString:[data objectForKey:@"URL"]];
 }
 
 @end

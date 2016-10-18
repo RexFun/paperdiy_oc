@@ -11,12 +11,10 @@
 @implementation SubNavViewCell
 
 - (void)setWithModel:(SubNavModel *)model {
-    
-    NSString *imgUrlStr = [NSString stringWithFormat:[AppUtil getActionUrlInPlistWithKey:@"SubNavImgAction"], model.subNavId];
-    NSURL *imgUrl = [NSURL URLWithString:imgUrlStr];
-    [self.subNavImg sd_setImageWithURL:imgUrl placeholderImage:[UIImage imageNamed:@"Placeholder.pdf"]];
+    [self.subNavImg sd_setImageWithURL:model.subNavImageUrl placeholderImage:[UIImage imageNamed:@"Placeholder.pdf"]];
     self.subNavId.text = model.subNavId;
     self.subNavName.text = model.subNavName;
 }
+
 
 @end

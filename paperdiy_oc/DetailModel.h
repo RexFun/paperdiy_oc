@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppUtil.h"
 
 @interface DetailModel : NSObject
 
 @property NSString *detailImgId;
 @property NSString *detailImgPid;
 @property NSString *detailImgSort;
+@property NSString *detailImgUrl;
 
 - (void)initWithData: (NSDictionary *) data;
 

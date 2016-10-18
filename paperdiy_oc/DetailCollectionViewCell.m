@@ -11,9 +11,8 @@
 @implementation DetailCollectionViewCell
 
 - (void)setWithModel:(DetailModel *)model {
-    NSString *imgUrlStr = [NSString stringWithFormat:[AppUtil getActionUrlInPlistWithKey:@"DetailImgAction"], model.detailImgId];
-    NSURL    *imgUrl    = [NSURL URLWithString:imgUrlStr];
-    [self.detailImgView sd_setImageWithURL:imgUrl placeholderImage:[UIImage imageNamed:@"Placeholder.pdf"]];
+ 
+    [self.detailImgView sd_setImageWithURL:model.detailImgUrl placeholderImage:[UIImage imageNamed:@"Placeholder.pdf"]];
     self.detailImgId.text    = model.detailImgId;
     self.detailImgSort.text  = [NSString stringWithFormat:@"第 %@ 步", model.detailImgSort];
 }

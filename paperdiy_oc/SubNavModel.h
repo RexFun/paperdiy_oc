@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppUtil.h"
 
 @interface SubNavModel : NSObject
 
 @property NSString *subNavId;
 @property NSString *subNavName;
+@property NSString *subNavImageUrl;
 
 - (void)initWithData: (NSDictionary *) data;
 
