@@ -27,6 +27,8 @@
     NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"NavAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *URL = [NSURL URLWithString:urlStr];
     
+    NSLog(@"url -> %@", urlStr);
+    
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     

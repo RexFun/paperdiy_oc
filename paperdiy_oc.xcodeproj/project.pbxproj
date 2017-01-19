@@ -20,7 +20,7 @@
 		7176B5241C71D04200301AB5 /* NavViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B5231C71D04200301AB5 /* NavViewCell.m */; };
 		7176B52E1C72C30800301AB5 /* NavModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B52D1C72C30800301AB5 /* NavModel.m */; };
 		7176B53C1C730D6E00301AB5 /* NavPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B53B1C730D6E00301AB5 /* NavPresenter.m */; };
-		71B957301C7425830070A9DF /* actionUrlInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9572F1C7425830070A9DF /* actionUrlInfo.plist */; };
+		71B957301C7425830070A9DF /* Url.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B9572F1C7425830070A9DF /* Url.plist */; };
 		71B957331C743D2A0070A9DF /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B957321C743D2A0070A9DF /* AppUtil.m */; };
 		71C3BEAE1C76B26300A00C4D /* DetailCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEAD1C76B26300A00C4D /* DetailCollectionViewController.m */; };
 		71C3BEB11C76B29000A00C4D /* DetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C3BEB01C76B29000A00C4D /* DetailCollectionViewCell.m */; };
@@ -41,7 +41,7 @@
 		7104D42E1C746F350060E87D /* SubNavModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubNavModel.h; sourceTree = "<group>"; };
 		7104D42F1C746F350060E87D /* SubNavModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavModel.m; sourceTree = "<group>"; };
 		7104D4311C7473930060E87D /* SubNavPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubNavPresenter.h; sourceTree = "<group>"; };
-		7104D4321C7473930060E87D /* SubNavPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavPresenter.m; sourceTree = "<group>"; };
+		7104D4321C7473930060E87D /* SubNavPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SubNavPresenter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7176B5051C71C7EA00301AB5 /* Paper Diy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paper Diy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7176B5091C71C7EA00301AB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7176B50B1C71C7EA00301AB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		7176B52D1C72C30800301AB5 /* NavModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavModel.m; sourceTree = "<group>"; };
 		7176B53A1C730D6E00301AB5 /* NavPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavPresenter.h; sourceTree = "<group>"; };
 		7176B53B1C730D6E00301AB5 /* NavPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavPresenter.m; sourceTree = "<group>"; };
-		71B9572F1C7425830070A9DF /* actionUrlInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = actionUrlInfo.plist; sourceTree = "<group>"; };
+		71B9572F1C7425830070A9DF /* Url.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Url.plist; sourceTree = "<group>"; };
 		71B957311C743D2A0070A9DF /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
 		71B957321C743D2A0070A9DF /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
 		71C3BEAC1C76B26200A00C4D /* DetailCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCollectionViewController.h; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		71C3BEB21C76B2B300A00C4D /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
 		71C3BEB31C76B2B300A00C4D /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		71C3BEB51C76B2C900A00C4D /* DetailCollectionPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCollectionPresenter.h; sourceTree = "<group>"; };
-		71C3BEB61C76B2C900A00C4D /* DetailCollectionPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCollectionPresenter.m; sourceTree = "<group>"; };
+		71C3BEB61C76B2C900A00C4D /* DetailCollectionPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DetailCollectionPresenter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		71C3BEB81C76E84800A00C4D /* DetailScrollPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailScrollPageViewController.h; sourceTree = "<group>"; };
 		71C3BEB91C76E84800A00C4D /* DetailScrollPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailScrollPageViewController.m; sourceTree = "<group>"; };
 		71C3BEBB1C770BF500A00C4D /* DetailScrollPageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailScrollPageViewCell.h; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 				7176B5141C71C7EA00301AB5 /* Assets.xcassets */,
 				7176B5161C71C7EA00301AB5 /* LaunchScreen.storyboard */,
 				7176B5191C71C7EA00301AB5 /* Info.plist */,
-				71B9572F1C7425830070A9DF /* actionUrlInfo.plist */,
+				71B9572F1C7425830070A9DF /* Url.plist */,
 				7176B5081C71C7EA00301AB5 /* Supporting Files */,
 			);
 			path = paperdiy_oc;
@@ -340,7 +340,7 @@
 				TargetAttributes = {
 					7176B5041C71C7EA00301AB5 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = WWN3ZC5QF3;
+						DevelopmentTeam = R74GGP667Z;
 					};
 				};
 			};
@@ -370,7 +370,7 @@
 				71ED862E1C7EE3C100026AD7 /* Podfile in Resources */,
 				7176B5181C71C7EA00301AB5 /* LaunchScreen.storyboard in Resources */,
 				7176B5151C71C7EA00301AB5 /* Assets.xcassets in Resources */,
-				71B957301C7425830070A9DF /* actionUrlInfo.plist in Resources */,
+				71B957301C7425830070A9DF /* Url.plist in Resources */,
 				7176B5131C71C7EA00301AB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
