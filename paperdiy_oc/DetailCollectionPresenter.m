@@ -10,9 +10,10 @@
 
 @implementation DetailCollectionPresenter
 
-- (id)initWithCollectionView:(UICollectionView *)collectionView andSubNavId:(NSString *)subNavId
+- (id)initWithCtx:(UIViewController*)ctx andCollectionView:(UICollectionView*)collectionView andSubNavId:(NSString*)subNavId
 {
     self.models         = [[NSMutableArray alloc] init];
+    self.ctx            = ctx;
     self.collectionView = collectionView;
     self.subNavId       = subNavId;
     return self;
@@ -30,34 +31,37 @@
     NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"],parameters);
     
     [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] parameters:parameters
-          success:^(NSURLSessionTask *task, id responseObject)
-     {
-         NSLog(@"JSON: %@", responseObject);
-         //获取json数据
-         NSArray *datas = responseObject;
-         if(datas.count > 0)
-         {
-             //清除旧记录
-             [self.models removeAllObjects];
-             //加载新记录
-             for(NSDictionary *data in datas) {
-                 DetailModel *o = [[DetailModel alloc] init];
-                 [o initWithData:data];
-                 [self.models addObject:o];
-             }
-             //刷新tableView
-             [self.collectionView reloadData];
-         }
-         else
-         {
-             //全部加载完毕
-             [self.collectionView.mj_footer endRefreshingWithNoMoreData];
-         }
-     }
-          failure:^(NSURLSessionTask *operation, NSError *error)
-     {
-         NSLog(@"Error: %@", error);
-     }];
+    success:^(NSURLSessionTask *task, id responseObject)
+    {
+        NSLog(@"JSON: %@", responseObject);
+        //获取json数据
+        NSArray *datas = responseObject;
+        if(datas.count > 0)
+        {
+            //清除旧记录
+            [self.models removeAllObjects];
+            //加载新记录
+            for(NSDictionary *data in datas)
+            {
+                DetailModel *o = [[DetailModel alloc] init];
+                [o initWithData:data];
+                [self.models addObject:o];
+            }
+            //刷新tableView
+            [self.collectionView reloadData];
+        }
+        else
+        {
+            //全部加载完毕
+            [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        }
+    }
+    failure:^(NSURLSessionTask *operation, NSError *error)
+    {
+        NSLog(@"Error: %@", error);
+        UIAlertController *alert = [SevenUIAlert initNoticeWithTitle:@"提示" andMsg:error.localizedDescription andBtnTitle:@"OK"];
+        [self.ctx presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 - (void)pullUpRefresh
@@ -69,32 +73,34 @@
     NSDictionary *parameters = @{@"pid":self.subNavId, @"offset":[NSNumber numberWithLong:self.models.count], @"limit":@"5"};
     //发请求
     [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] parameters:parameters
-          success:^(NSURLSessionTask *task, id responseObject)
-     {
-         NSLog(@"JSON: %@", responseObject);
-         //获取json数据
-         NSArray *datas = responseObject;
-         if(datas.count > 0)
-         {
-             //加载新记录
-             for(NSDictionary *data in datas) {
-                 DetailModel *o = [[DetailModel alloc] init];
-                 [o initWithData:data];
-                 [self.models addObject:o];
-             }
-             //刷新tableView
-             [self.collectionView reloadData];
+    success:^(NSURLSessionTask *task, id responseObject)
+    {
+        NSLog(@"JSON: %@", responseObject);
+        //获取json数据
+        NSArray *datas = responseObject;
+        if(datas.count > 0)
+        {
+         //加载新记录
+         for(NSDictionary *data in datas) {
+             DetailModel *o = [[DetailModel alloc] init];
+             [o initWithData:data];
+             [self.models addObject:o];
          }
-         else
-         {
-             //全部加载完毕
-             [self.collectionView.mj_footer endRefreshingWithNoMoreData];
-         }
-     }
-          failure:^(NSURLSessionTask *operation, NSError *error)
-     {
-         NSLog(@"Error: %@", error);
-     }];
+         //刷新tableView
+         [self.collectionView reloadData];
+        }
+        else
+        {
+         //全部加载完毕
+         [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        }
+    }
+    failure:^(NSURLSessionTask *operation, NSError *error)
+    {
+        NSLog(@"Error: %@", error);
+        UIAlertController *alert = [SevenUIAlert initNoticeWithTitle:@"提示" andMsg:error.localizedDescription andBtnTitle:@"OK"];
+        [self.ctx presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 // 原生API HTTP请求

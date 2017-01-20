@@ -12,6 +12,8 @@
 #import "AppUtil.h"
 #import "DetailModel.h"
 #import "DetailScrollPageViewCell.h"
+#import "SevenUIAlert.h"
+
 
 @interface DetailScrollPagePresenter : NSObject<UIScrollViewDelegate>
 

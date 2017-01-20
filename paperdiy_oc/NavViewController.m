@@ -45,7 +45,7 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     /*--- 初始化数据 -------------------------------------------------------*/
-    self.navPresenter = [[NavPresenter alloc] initWithTableView:self.tableView andRefreshControl:self.refreshControl];
+    self.navPresenter = [[NavPresenter alloc] initWithCtx:self andTableView:self.tableView andRefreshControl:self.refreshControl];
     [self reloadTableViewAction];
 }
 

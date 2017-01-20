@@ -11,9 +11,10 @@
 @implementation NavPresenter
 
 # pragma mark - 初始化tableView
-- (id)initWithTableView:(UITableView *)tableView andRefreshControl:(UIRefreshControl *)refreshControl
+- (id)initWithCtx:(UIViewController*)ctx andTableView:(UITableView *)tableView andRefreshControl:(UIRefreshControl *)refreshControl
 {
     self.models         = [[NSMutableArray alloc] init];
+    self.ctx            = ctx;
     self.tableView      = tableView;
     self.refreshControl = refreshControl;
     return self;
@@ -39,6 +40,8 @@
         if (error)
         {
             NSLog(@"Error: %@", error);
+            UIAlertController *alert = [SevenUIAlert initNoticeWithTitle:@"提示" andMsg:error.localizedDescription andBtnTitle:@"OK"];
+            [self.ctx presentViewController:alert animated:YES completion:nil];
         }
         else
         {

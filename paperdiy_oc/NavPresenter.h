@@ -11,6 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "AppUtil.h"
 #import "NavModel.h"
+#import "SevenUIAlert.h"
 
 //接口写法
 //@protocol ReloadTableViewByModelsDelegate
@@ -25,11 +26,12 @@
 
 @interface NavPresenter : NSObject
 
-@property NSMutableArray<NavModel *> *models;
-@property UITableView                *tableView;
-@property UIRefreshControl           *refreshControl;
+@property NSMutableArray<NavModel*>* models;
+@property UIViewController*          ctx;
+@property UITableView*               tableView;
+@property UIRefreshControl*          refreshControl;
 
-- (id)initWithTableView:(UITableView *)tableView andRefreshControl:(UIRefreshControl *)refreshControl;
+- (id)initWithCtx:(UIViewController*)ctx andTableView:(UITableView*)tableView andRefreshControl:(UIRefreshControl*)refreshControl;
 - (void)reloadTableView;
 
 @end

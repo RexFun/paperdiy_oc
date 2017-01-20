@@ -12,15 +12,17 @@
 #import "MJRefresh.h"
 #import "AppUtil.h"
 #import "DetailModel.h"
+#import "SevenUIAlert.h"
 
 @interface DetailCollectionPresenter : NSObject
 
-@property NSMutableArray<DetailModel *> *models;
-@property UICollectionView              *collectionView;
-@property UIRefreshControl              *refreshControl;
-@property NSString                      *subNavId;
+@property NSMutableArray<DetailModel*>* models;
+@property UIViewController*             ctx;
+@property UICollectionView*             collectionView;
+@property UIRefreshControl*             refreshControl;
+@property NSString*                     subNavId;
 
-- (id)initWithCollectionView:(UICollectionView *)collectionView andSubNavId:(NSString *)subNavId;
+- (id)initWithCtx:(UIViewController*)ctx andCollectionView:(UICollectionView*)collectionView andSubNavId:(NSString*)subNavId;
 - (void)pullDownRefresh;
 - (void)pullUpRefresh;
 

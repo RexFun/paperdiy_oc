@@ -32,26 +32,30 @@
     NSDictionary *parameters = @{@"pid":self.subNavId};
     //发请求
     [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailPageAction"] parameters:parameters
-          success:^(NSURLSessionTask *task, id responseObject)
-     {
-         NSLog(@"JSON: %@", responseObject);
-         //获取json数据
-         NSArray *datas = responseObject;
-         //清除旧记录
-         [self.models removeAllObjects];
-         //加载新记录
-         for(NSDictionary *data in datas) {
-             DetailModel *o = [[DetailModel alloc] init];
-             [o initWithData:data];
-             [self.models addObject:o];
-         }
-         //刷新View
-         [self drawView];
-     }
-          failure:^(NSURLSessionTask *operation, NSError *error)
-     {
-         NSLog(@"Error: %@", error);
-     }];
+        success:^(NSURLSessionTask *task, id responseObject)
+        {
+            NSLog(@"JSON: %@", responseObject);
+            //获取json数据
+            NSArray *datas = responseObject;
+            //清除旧记录
+            [self.models removeAllObjects];
+            //加载新记录
+            for(NSDictionary *data in datas)
+            {
+                DetailModel *o = [[DetailModel alloc] init];
+                [o initWithData:data];
+                [self.models addObject:o];
+            }
+            //刷新View
+            [self drawView];
+        }
+        failure:^(NSURLSessionTask *operation, NSError *error)
+        {
+            NSLog(@"Error: %@", error);
+            UIAlertController *alert = [SevenUIAlert initNoticeWithTitle:@"提示" andMsg:error.localizedDescription andBtnTitle:@"OK"];
+            [self.ctx presentViewController:alert animated:YES completion:nil];
+        }
+    ];
 }
 // 原生API HTTP请求
 //- (void)reloadView {

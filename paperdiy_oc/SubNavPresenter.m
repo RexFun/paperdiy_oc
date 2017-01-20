@@ -10,9 +10,10 @@
 
 @implementation SubNavPresenter
 
-- (id)initWithCollectionView:(UICollectionView *)collectionView andNavId:(NSString *)navId
+- (id)initWithCtx:(UIViewController*)ctx andCollectionView:(UICollectionView*)collectionView andNavId:(NSString*)navId
 {
     self.models         = [[NSMutableArray alloc] init];
+    self.ctx            = ctx;
     self.collectionView = collectionView;
     self.navId          = navId;
     return self;
@@ -61,6 +62,8 @@
     failure:^(NSURLSessionTask *operation, NSError *error)
     {
         NSLog(@"Error: %@", error);
+        UIAlertController* alert = [SevenUIAlert initNoticeWithTitle:@"提示" andMsg:error.localizedDescription andBtnTitle:@"OK"];
+        [self.ctx presentViewController:alert animated:YES completion:nil];
     }];
 }
 
@@ -76,34 +79,35 @@
     NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"SubNavAction"],parameters);
     
     [manager POST:[AppUtil getActionUrlInPlistWithKey:@"SubNavAction"] parameters:parameters
-          success:^(NSURLSessionTask *task, id responseObject)
-     {
-         NSLog(@"JSON: %@", responseObject);
-         //获取json数据
-         NSArray *datas = responseObject;
-         if(datas.count > 0)
-         {
-             //加载新记录
-             for(NSDictionary *data in datas)
-             {
-                 SubNavModel *o = [[SubNavModel alloc] init];
-                 [o initWithData:data];
-                 [self.models addObject:o];
-             }
-             //刷新tableView
-             [self.collectionView reloadData];
-         }
-         else
-         {
-             //全部加载完毕
-             [self.collectionView.mj_footer endRefreshingWithNoMoreData];
-         }
-         
-     }
-          failure:^(NSURLSessionTask *operation, NSError *error)
-     {
-         NSLog(@"Error: %@", error);
-     }];
+    success:^(NSURLSessionTask *task, id responseObject)
+    {
+        NSLog(@"JSON: %@", responseObject);
+        //获取json数据
+        NSArray *datas = responseObject;
+        if(datas.count > 0)
+        {
+            //加载新记录
+            for(NSDictionary *data in datas)
+            {
+                SubNavModel *o = [[SubNavModel alloc] init];
+                [o initWithData:data];
+                [self.models addObject:o];
+            }
+            //刷新tableView
+            [self.collectionView reloadData];
+        }
+        else
+        {
+            //全部加载完毕
+            [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+        }
+    }
+    failure:^(NSURLSessionTask *operation, NSError *error)
+    {
+        NSLog(@"Error: %@", error);
+        UIAlertController* alert = [SevenUIAlert initNoticeWithTitle:@"提示" andMsg:error.localizedDescription andBtnTitle:@"OK"];
+        [self.ctx presentViewController:alert animated:YES completion:nil];
+    }];
 }
 //原生API HTTP请求
 //- (void)reloadCollectionView {

@@ -145,7 +145,7 @@ static NSString * const reuseIdentifier = @"DataCell";
     //设置Title
     self.title = _subNavName;
     //初始化数据
-    self.detailCollectionPresenter = [[DetailCollectionPresenter alloc] initWithCollectionView:self.collectionView andSubNavId:_subNavId];
+    self.detailCollectionPresenter = [[DetailCollectionPresenter alloc] initWithCtx:self andCollectionView:self.collectionView andSubNavId:_subNavId];
     //下拉刷新
     self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^
                                      {

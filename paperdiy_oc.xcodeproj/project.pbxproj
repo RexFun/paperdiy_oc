@@ -11,6 +11,7 @@
 		7104D42D1C746EEF0060E87D /* SubNavViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7104D42C1C746EEF0060E87D /* SubNavViewCell.m */; };
 		7104D4301C746F350060E87D /* SubNavModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7104D42F1C746F350060E87D /* SubNavModel.m */; };
 		7104D4331C7473930060E87D /* SubNavPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7104D4321C7473930060E87D /* SubNavPresenter.m */; };
+		7132EFA41E31A5400070B459 /* SevenUIAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7132EFA31E31A5400070B459 /* SevenUIAlert.m */; };
 		7176B50A1C71C7EA00301AB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B5091C71C7EA00301AB5 /* main.m */; };
 		7176B50D1C71C7EA00301AB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176B50C1C71C7EA00301AB5 /* AppDelegate.m */; };
 		7176B5131C71C7EA00301AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7176B5111C71C7EA00301AB5 /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 		7104D42F1C746F350060E87D /* SubNavModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubNavModel.m; sourceTree = "<group>"; };
 		7104D4311C7473930060E87D /* SubNavPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubNavPresenter.h; sourceTree = "<group>"; };
 		7104D4321C7473930060E87D /* SubNavPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SubNavPresenter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		7132EFA21E31A5400070B459 /* SevenUIAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenUIAlert.h; sourceTree = "<group>"; };
+		7132EFA31E31A5400070B459 /* SevenUIAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenUIAlert.m; sourceTree = "<group>"; };
 		7176B5051C71C7EA00301AB5 /* Paper Diy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paper Diy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7176B5091C71C7EA00301AB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7176B50B1C71C7EA00301AB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +106,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7132EF9E1E319FB50070B459 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				7132EFA21E31A5400070B459 /* SevenUIAlert.h */,
+				7132EFA31E31A5400070B459 /* SevenUIAlert.m */,
+			);
+			name = UIComponent;
+			sourceTree = "<group>";
+		};
 		7176B4FC1C71C7EA00301AB5 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +137,7 @@
 		7176B5071C71C7EA00301AB5 /* paperdiy_oc */ = {
 			isa = PBXGroup;
 			children = (
+				7132EF9E1E319FB50070B459 /* UIComponent */,
 				71B957341C7441FB0070A9DF /* Util */,
 				7176B5261C72BDE400301AB5 /* NavView */,
 				7176B5271C72BDEE00301AB5 /* SubNavView */,
@@ -448,6 +461,7 @@
 				7176B53C1C730D6E00301AB5 /* NavPresenter.m in Sources */,
 				71C3BEB71C76B2C900A00C4D /* DetailCollectionPresenter.m in Sources */,
 				7104D42A1C7469DE0060E87D /* SubNavViewController.m in Sources */,
+				7132EFA41E31A5400070B459 /* SevenUIAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
