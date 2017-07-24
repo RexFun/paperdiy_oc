@@ -29,7 +29,7 @@
     //一定要加这段，否则报错：unacceptable content-type text/plain
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain",nil];
     //设参数
-    NSDictionary *parameters = @{@"pid":self.subNavId};
+    NSDictionary *parameters = @{@"modelId":self.subNavId};
     //发请求
     [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailPageAction"] parameters:parameters
         success:^(NSURLSessionTask *task, id responseObject)

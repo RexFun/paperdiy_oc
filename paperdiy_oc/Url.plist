@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>AppWebPath</key>
-	<string>http://172.20.4.113:8383/paper/</string>
+	<string>http://192.168.133.109:8282/origami/</string>
 	<key>AppImagePath</key>
 	<string>image/</string>
 	<key>NavAction</key>
 	<string>client/nav/getNavDataJson.action</string>
 	<key>SubNavAction</key>
-	<string>client/papermodel/getPageByPid.action</string>
+	<string>client/model/getPageByPid.action</string>
 	<key>SubNavImgAction</key>
-	<string>client/paperimage/getPaperImageByPidAndMaxSort.action?pid=%@</string>
+	<string>client/image/getPaperImageByPidAndMaxSort.action?modelId=%@</string>
 	<key>DetailCollectionAction</key>
-	<string>client/paperimage/getPageByPid.action</string>
+	<string>client/image/getPageByPid.action</string>
 	<key>DetailPageAction</key>
-	<string>client/paperimage/getListByPid.action</string>
+	<string>client/image/getListByPid.action</string>
 	<key>DetailImgAction</key>
-	<string>client/paperimage/getPaperImageById.action?id=%@</string>
+	<string>client/image/getPaperImageById.action?id=%@</string>
 </dict>
 </plist>

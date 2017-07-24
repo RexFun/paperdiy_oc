@@ -12,9 +12,9 @@
 
 - (void)initWithData: (NSDictionary *) data {
     self.detailImgId   = [NSString stringWithFormat:@"%@",[data objectForKey:@"ID"]];
-    self.detailImgPid  = [NSString stringWithFormat:@"%@",[data objectForKey:@"PID"]];
+    self.detailImgPid  = [NSString stringWithFormat:@"%@",[data objectForKey:@"CATEGORYID"]];
     self.detailImgSort = [NSString stringWithFormat:@"%@",[data objectForKey:@"SORT"]];
-    self.detailImgUrl = [[AppUtil getActionUrlInPlistWithKey:@"AppImagePath"] stringByAppendingString:[data objectForKey:@"URL"]];
+    self.detailImgUrl = [[AppUtil getActionUrlInPlistWithKey:@"AppImagePath"] stringByAppendingString:[data objectForKey:@"NAME"]];
 }
 
 @end

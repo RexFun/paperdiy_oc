@@ -13,7 +13,8 @@
 - (void)initWithData: (NSDictionary *) data {
     self.subNavId   = [NSString stringWithFormat:@"%@",[data objectForKey:@"ID"]];
     self.subNavName = [data objectForKey:@"NAME"];
-    self.subNavImageUrl = [[AppUtil getActionUrlInPlistWithKey:@"AppImagePath"] stringByAppendingString:[data objectForKey:@"IMAGE_URL"]];
+    self.subNavImageUrl = [[AppUtil getActionUrlInPlistWithKey:@"AppImagePath"] stringByAppendingString:[data objectForKey:@"IMAGE_NAME"]];
+    NSLog(@"%@", self.subNavImageUrl);
 }
 
 @end

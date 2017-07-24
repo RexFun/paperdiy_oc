@@ -25,7 +25,7 @@
     //一定要加这段，否则报错：unacceptable content-type text/plain
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain",nil];
     //设参数
-    NSDictionary *parameters = @{@"pid":self.subNavId, @"offset":@"0", @"limit":@"5"};
+    NSDictionary *parameters = @{@"modelId":self.subNavId, @"offset":@"0", @"limit":@"5"};
     //发请求
     
     NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"],parameters);
@@ -70,7 +70,7 @@
     //一定要加这段，否则报错：unacceptable content-type text/plain
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain",nil];
     //设参数
-    NSDictionary *parameters = @{@"pid":self.subNavId, @"offset":[NSNumber numberWithLong:self.models.count], @"limit":@"5"};
+    NSDictionary *parameters = @{@"modelId":self.subNavId, @"offset":[NSNumber numberWithLong:self.models.count], @"limit":@"5"};
     //发请求
     [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] parameters:parameters
     success:^(NSURLSessionTask *task, id responseObject)
