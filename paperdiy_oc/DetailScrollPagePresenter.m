@@ -31,7 +31,7 @@
     //设参数
     NSDictionary *parameters = @{@"modelId":self.subNavId};
     //发请求
-    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailPageAction"] parameters:parameters
+    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"ImageAction"] parameters:parameters
         success:^(NSURLSessionTask *task, id responseObject)
         {
             NSLog(@"JSON: %@", responseObject);
@@ -60,7 +60,7 @@
 // 原生API HTTP请求
 //- (void)reloadView {
 //    //初始化请求路径url
-//    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"DetailPageAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"ImageAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 //    NSURL *url       = [NSURL URLWithString:urlStr];
 //    //初始化request
 //    // 1.

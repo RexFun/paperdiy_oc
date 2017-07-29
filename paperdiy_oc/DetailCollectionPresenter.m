@@ -28,9 +28,9 @@
     NSDictionary *parameters = @{@"modelId":self.subNavId, @"offset":@"0", @"limit":@"5"};
     //发请求
     
-    NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"],parameters);
+    NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"ImagePageAction"],parameters);
     
-    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] parameters:parameters
+    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"ImagePageAction"] parameters:parameters
     success:^(NSURLSessionTask *task, id responseObject)
     {
         NSLog(@"JSON: %@", responseObject);
@@ -72,7 +72,7 @@
     //设参数
     NSDictionary *parameters = @{@"modelId":self.subNavId, @"offset":[NSNumber numberWithLong:self.models.count], @"limit":@"5"};
     //发请求
-    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] parameters:parameters
+    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"ImagePageAction"] parameters:parameters
     success:^(NSURLSessionTask *task, id responseObject)
     {
         NSLog(@"JSON: %@", responseObject);
@@ -106,7 +106,7 @@
 // 原生API HTTP请求
 //- (void)reloadCollectionView {
 //    //初始化请求路径url
-//    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"DetailCollectionAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"ImagePageAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 //    NSURL *url       = [NSURL URLWithString:urlStr];
 //    //初始化request
 //    // 1.

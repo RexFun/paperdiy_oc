@@ -10,10 +10,11 @@
 
 @implementation SubNavViewCell
 
-- (void)setWithModel:(SubNavModel *)model {
-    [self.subNavImg sd_setImageWithURL:model.subNavImageUrl placeholderImage:[UIImage imageNamed:@"Placeholder.pdf"]];
+- (void)setWithModel:(SubNavModel *)model
+{
     self.subNavId.text = model.subNavId;
     self.subNavName.text = model.subNavName;
+    [self.subNavImg sd_setImageWithURL:model.subNavImageUrl placeholderImage:[UIImage imageNamed:@"Placeholder.pdf"]];
 }
 
 

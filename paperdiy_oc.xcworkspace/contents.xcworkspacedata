@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:paperdiy_oc.xcodeproj">
+      location = "group:/Users/ole/Dev/IOS/Objective-C/paperdiy_oc/paperdiy_oc.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -6,17 +6,13 @@
 	<string>http://192.168.133.109:8282/origami/</string>
 	<key>AppImagePath</key>
 	<string>image/</string>
-	<key>NavAction</key>
-	<string>client/nav/getNavDataJson.action</string>
-	<key>SubNavAction</key>
-	<string>client/model/getPageByPid.action</string>
-	<key>SubNavImgAction</key>
-	<string>client/image/getPaperImageByPidAndMaxSort.action?modelId=%@</string>
-	<key>DetailCollectionAction</key>
-	<string>client/image/getPageByPid.action</string>
-	<key>DetailPageAction</key>
-	<string>client/image/getListByPid.action</string>
-	<key>DetailImgAction</key>
-	<string>client/image/getPaperImageById.action?id=%@</string>
+	<key>CategoryAction</key>
+	<string>client/category/query.action</string>
+	<key>ModelPageAction</key>
+	<string>client/model/queryPage.action</string>
+	<key>ImagePageAction</key>
+	<string>client/image/queryPage.action</string>
+	<key>ImageAction</key>
+	<string>client/image/query.action</string>
 </dict>
 </plist>

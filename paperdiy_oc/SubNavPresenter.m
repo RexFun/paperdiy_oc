@@ -28,9 +28,9 @@
     NSDictionary *parameters = @{@"categoryId":self.navId, @"offset":@"0", @"limit":@"5"};
     //发请求
     
-    NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"SubNavAction"],parameters);
+    NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"ModelPageAction"],parameters);
     
-    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"SubNavAction"] parameters:parameters
+    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"ModelPageAction"] parameters:parameters
     success:^(NSURLSessionTask *task, id responseObject)
     {
         NSLog(@"JSON: %@", responseObject);
@@ -76,9 +76,9 @@
     NSDictionary *parameters = @{@"categoryId":self.navId, @"offset":[NSNumber numberWithLong:self.models.count], @"limit":@"5"};
     //发请求
     
-    NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"SubNavAction"],parameters);
+    NSLog(@"url -> %@, params -> %@",[AppUtil getActionUrlInPlistWithKey:@"ModelPageAction"],parameters);
     
-    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"SubNavAction"] parameters:parameters
+    [manager POST:[AppUtil getActionUrlInPlistWithKey:@"ModelPageAction"] parameters:parameters
     success:^(NSURLSessionTask *task, id responseObject)
     {
         NSLog(@"JSON: %@", responseObject);

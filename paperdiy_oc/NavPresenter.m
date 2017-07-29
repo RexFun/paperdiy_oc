@@ -25,7 +25,7 @@
 - (void)reloadTableView
 {
     //初始化请求路径url
-    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"NavAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlStr = [[AppUtil getActionUrlInPlistWithKey:@"CategoryAction"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *URL = [NSURL URLWithString:urlStr];
     
     NSLog(@"url -> %@", urlStr);
